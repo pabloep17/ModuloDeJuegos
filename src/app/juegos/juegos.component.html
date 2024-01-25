@@ -1,3 +1,14 @@
+<div className="flex mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px]">
+    <input placeholder="Search Repositories and Projects..." onChange={searchHandle} value={search} className='w-full text-sm border bg-white dark:bg-black dark:text-white text-[#171717] shadow-sm rounded-lg p-[10px] ease-in-out duration-300' aria-label="Search" aria-invalid="false" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false" type="search" style={{"outline": "none"}}></input>
+    <div className='ml-[20px] flex text-sm border bg-white dark:bg-black dark:text-white text-[#171717] shadow-sm rounded-lg flex content-center items-center ease-in-out duration-300'>
+        <div className="pt-[8px] pb-[8px] pr-[12px] pl-[12px] ml-[5px] rounded-sm" style={{backgroundColor: grid ? "#f2f2f2" : ""}} onClick={() => setGrid(true)}>
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style={{"color": "currentcolor","width": "16px", "height": "16px"}}><path d="M3 3h7v7H3z"></path><path d="M14 3h7v7h-7z"></path><path d="M14 14h7v7h-7z"></path><path d="M3 14h7v7H3z"></path></svg>
+        </div>
+        <div className="pt-[8px] pb-[8px] pr-[12px] pl-[12px] mr-[5px] rounded-sm" style={{backgroundColor: grid ? "" : "#f2f2f2"}} onClick={() => setGrid(false)}>
+            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style={{"color": "currentcolor","width": "16px", "height": "16px"}}><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
+        </div>
+    </div>
+</div>
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] menu">
     <div *ngFor="let b of juegos">
         <a href={{b.href}}>
