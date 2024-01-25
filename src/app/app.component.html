@@ -1,40 +1,11 @@
 <nav class="bg-white dark:bg-[#0a0a0a] sticky top-0 z-50" style="box-shadow: inset 0 -1px #00000014">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 justify-between">
-      {{viewSelect}}
       <div class="flex w-full">
         <div class="flex flex-shrink-0 items-center">
           <img class='w-[35px] h-[35px]' src='https://angular.io/assets/images/logos/angular/shield-large.svg' />
           <p class="pl-3 hidden md:block"></p>
         </div>
-        <div *ngFor="let n of navigation" class="hidden w-full sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-            <a href={{n.href}} *ngIf="viewSelect != n.name;else select" onclick="select(n.name)" class="border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">{{n.name}}</a>
-            <!--
-              <Link to={e.href} onClick={() => setView(e.name)} class={viewSelect == e.name ? "border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" : "border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"}>{e.name}</Link>
-            -->
-        </div>
-        
-
-        <div class="flex justify-end s-my-px ml-6 sm:hidden space-x-8 w-full" >
-          <div class='flex justify-center content-center items-center w-full'>
-              
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="headlessui-disclosure-panel-:R4ba:" data-headlessui-state="open"> <!--class={{verMenuMovil == true ? "sm:hidden" : "hidden"}}-->
-      <div class="space-y-1 pt-2 pb-3">
-        <!--
-        {
-            navigation.map(e => {
-              return (
-                  <Link to={e.href} onClick={() => {
-                      setVerMenuMovil(verMenuMovil == true ? false : true)
-                      setView(e.name)
-                  }} class={viewSelect == e.name ? "bg-slate-50 dark:bg-[#121212] dark:text-white border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"}>{e.name}</Link>
-              )  
-            })
-          }-->
       </div>
     </div>
   </div>
