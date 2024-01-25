@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'modulodejuegos';
+  
+  verMenuMovil:boolean = true
+  viewSelect:string = "sdsdsd"
+
+  public navigation: Array<any> = [
+    { name: "Piedra Papel Tijera", href: ""},
+  ];
+
+  select(view:string) {
+    this.viewSelect = view
+  }
+
 }
