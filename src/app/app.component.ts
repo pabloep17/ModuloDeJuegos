@@ -15,7 +15,10 @@ export class AppComponent {
 
   public nav: Array<any> = [
     { name: "Inicio", href: "inicio"},
-    { name: "alkpsjdlk", href: "juegos"},
+    { name: "Juegos", href: "juegos"},
+    { name: "Información", href: "informacion"},
+    { name: "Desarrollador", href: "desarrollador"},
+    { name: "Versión", href: "version"},
   ];
 
   setViewSelect(v: string) {
