@@ -18,6 +18,10 @@ export class AppComponent {
     { name: "alkpsjdlk", href: "juegos"},
   ];
 
+  setViewSelect(v: string) {
+    this.viewSelect = v
+  }
+
   ngOnInit() {
     this.pageTitle = document.title;
   }
