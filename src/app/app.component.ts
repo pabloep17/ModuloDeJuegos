@@ -11,7 +11,12 @@ export class AppComponent {
   pageTitle: string = '';
 
   verMenuMovil:boolean = false
-  viewSelect:string = ""
+  viewSelect:string = "Modulo de Juegos"
+
+  public nav: Array<any> = [
+    { name: "Piedra Papel Tijera", href: "juegos"},
+    { name: "alkpsjdlk", href: "juegos"},
+  ];
 
   ngOnInit() {
     this.pageTitle = document.title;
