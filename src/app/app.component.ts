@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'modulodejuegos';
+
+  pageTitle: string = '';
+
+  ngOnInit() {
+    // Obtén el título de la página actual y asígnalo a la propiedad pageTitle
+    this.pageTitle = document.title;
+  }
+
 }
