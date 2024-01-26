@@ -8,7 +8,7 @@
         </div>
         <div class="hidden w-full sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
           <ng-container *ngFor="let n of nav">
-            <a routerLink="/" routerLinkActive="active" class="{{viewSelect == n.name ? 'border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'}}">Home</a>
+            <a routerLink="/{{n.href}}" routerLinkActive="active" class="{{viewSelect == n.name ? 'border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'}}">{{n.name}}</a>
           <!--
           {
             navigation.map(e => {
@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-    <div id="headlessui-disclosure-panel-:R4ba:" data-headlessui-state="open">
+    <div class="{{verMenuMovil == true ? 'sm:hidden' : 'hidden'}}" id="headlessui-disclosure-panel-:R4ba:" data-headlessui-state="open">
       <div class="space-y-1 pt-2 pb-3">
         <!--
       {

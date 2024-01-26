@@ -11,10 +11,10 @@ export class AppComponent {
   pageTitle: string = '';
 
   verMenuMovil:boolean = false
-  viewSelect:string = "Modulo de Juegos"
+  viewSelect:string = "Inicio"
 
   public nav: Array<any> = [
-    { name: "Piedra Papel Tijera", href: "juegos"},
+    { name: "Inicio", href: "inicio"},
     { name: "alkpsjdlk", href: "juegos"},
   ];
 
