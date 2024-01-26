@@ -10,8 +10,10 @@ export class AppComponent {
 
   pageTitle: string = '';
 
+  verMenuMovil:boolean = false
+  viewSelect:string = ""
+
   ngOnInit() {
-    // Obtén el título de la página actual y asígnalo a la propiedad pageTitle
     this.pageTitle = document.title;
   }
 
