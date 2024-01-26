@@ -11,7 +11,7 @@ export class AppComponent {
   pageTitle: string = '';
 
   verMenuMovil:boolean = false
-  viewSelect:string = "Inicio"
+  viewSelect:string = "Modulo de Juegos"
 
   public nav: Array<any> = [
     { name: "Inicio", href: "inicio"},

@@ -5,11 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JuegosComponent } from './juegos/juegos.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { InformacionComponent } from './informacion/informacion.component';
+import { DesarrolladorComponent } from './desarrollador/desarrollador.component';
+import { VersionComponent } from './version/version.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JuegosComponent
+    JuegosComponent,
+    InicioComponent,
+    InformacionComponent,
+    DesarrolladorComponent,
+    VersionComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
