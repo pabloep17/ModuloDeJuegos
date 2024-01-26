@@ -14,7 +14,9 @@ export class DesarrolladorComponent {
 
   send() {
     var formdata = new FormData();
-    formdata.append("texto", `${this.firstname} ${this.lastname} / ${this.email}`);
+    formdata.append("firstname", this.firstname);
+    formdata.append("lastname", this.lastname);
+    formdata.append("email", this.email);
     formdata.append("body", this.body);
 
     var requestOptions = {
@@ -23,7 +25,7 @@ export class DesarrolladorComponent {
     };
 
     fetch("https://api.pabloeguilaz.es/", requestOptions)
-      .then(response => response.text())
+      .then(response => {})
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }
