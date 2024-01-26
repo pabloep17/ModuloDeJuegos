@@ -9,15 +9,6 @@
         <div class="hidden w-full sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
           <ng-container *ngFor="let n of nav">
             <a routerLink="/{{n.href}}" (click)="setViewSelect(n.name)" routerLinkActive="active" class="{{viewSelect == n.name ? 'border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'}}">{{n.name}}</a>
-          <!--
-          {
-            navigation.map(e => {
-              return (
-                  <Link to={e.href} onClick={() => setView(e.name)} class={viewSelect == e.name ? "border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" : "border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"}>{e.name}</Link>
-              ) 
-            })
-          }
-        -->
           </ng-container>
           <!--<div class='w-full flex justify-end border-transparent text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'>
             <img src={avatar_url} class='w-[35px] rounded-full' />
@@ -31,6 +22,7 @@
         <div class='flex justify-center content-center items-center w-full'>
           <p class='font-bold text-xl dark:text-white'>{{viewSelect}}</p>
             </div>
+            <p (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" class="dark:text-white border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" class='w-[20px] h-[20px]' xmlns="http://www.w3.org/2000/svg"><path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg></p>
             <!--
               {
                 verMenuMovil ?
@@ -44,18 +36,9 @@
       </div>
     <div class="{{verMenuMovil == true ? 'sm:hidden' : 'hidden'}}" id="headlessui-disclosure-panel-:R4ba:" data-headlessui-state="open">
       <div class="space-y-1 pt-2 pb-3">
-        <!--
-      {
-          navigation.map(e => {
-            return (
-                <Link to={e.href} onClick={() => {
-                    setVerMenuMovil(verMenuMovil == true ? false : true)
-                    setView(e.name)
-                }} class={viewSelect == e.name ? "bg-slate-50 dark:bg-[#121212] dark:text-white border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"}>{e.name}</Link>
-            )  
-          })
-        }
-      -->
+        <ng-container *ngFor="let n of nav">
+          <a routerLink="/{{n.href}}" (click)="setViewSelect(n.name)" (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" routerLinkActive="active" class="{{viewSelect == n.name ? 'bg-slate-50 dark:bg-[#121212] dark:text-white border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'}}">{{n.name}}</a>
+        </ng-container>
       </div>
     </div> 
 </nav>

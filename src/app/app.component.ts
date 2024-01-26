@@ -22,6 +22,10 @@ export class AppComponent {
     this.viewSelect = v
   }
 
+  setVerMenuMovil(v: boolean) {
+    this.verMenuMovil = v
+  }
+
   ngOnInit() {
     this.pageTitle = document.title;
   }
