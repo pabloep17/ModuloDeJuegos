@@ -8,8 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Modulo de juegos';
 
-  pageTitle: string = '';
-
   verMenuMovil:boolean = false
   viewSelect:string = "Modulo de Juegos"
 
@@ -27,10 +25,6 @@ export class AppComponent {
 
   setVerMenuMovil(v: boolean) {
     this.verMenuMovil = v
-  }
-
-  ngOnInit() {
-    this.pageTitle = document.title;
   }
 
 }
