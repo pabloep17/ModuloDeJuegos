@@ -28,6 +28,12 @@ export class DesarrolladorComponent {
       .then(response => {})
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
+
+    this.firstname = ""
+    this.lastname = ""
+    this.email = ""
+    this.body = ""
+    
   }
 
 }
