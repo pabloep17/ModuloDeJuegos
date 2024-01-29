@@ -10,6 +10,9 @@
           <ng-container *ngFor="let n of nav">
             <a routerLink="/{{n.href}}" (click)="setViewSelect(n.name)" routerLinkActive="active" class="{{viewSelect == n.name ? 'border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'}}">{{n.name}}</a>
           </ng-container>
+          <div class="w-full flex justify-end">
+            <a routerLink="/salir" (click)="setViewSelect('Salir')" routerLinkActive="active" class="border-transparent text-gray-500 hover:text-red-700 dark:hover:text-white hover:border-red-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Salir</a>
+          </div>
           <!--<div class='w-full flex justify-end border-transparent text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'>
             <img src={avatar_url} class='w-[35px] rounded-full' />
             <div class='pl-[10px]'>
@@ -33,6 +36,7 @@
       <ng-container *ngFor="let n of nav">
         <a routerLink="/{{n.href}}" (click)="setViewSelect(n.name)" (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" routerLinkActive="active" class="{{viewSelect == n.name ? 'bg-slate-50 dark:bg-[#121212] dark:text-white border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'}}">{{n.name}}</a>
       </ng-container>
+      <a routerLink="/salir" (click)="setViewSelect('Salir')" (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" routerLinkActive="active" class="border-transparent text-gray-600 hover:bg-red-50 hover:border-red-300 hover:text-red-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Salir</a>
     </div>
   </div> 
 </nav>

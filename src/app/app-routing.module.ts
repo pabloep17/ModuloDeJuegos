@@ -6,6 +6,7 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { DesarrolladorComponent } from './desarrollador/desarrollador.component';
 import { VersionComponent } from './version/version.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},
   { path: 'version', component: VersionComponent},
+  { path: 'juegos/piedra-papel-tijera', component: PiedraPapelTijeraComponent},
   { path: '**', component: PagenotfoundComponent},
 ];
 

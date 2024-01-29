@@ -10,6 +10,7 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { DesarrolladorComponent } from './desarrollador/desarrollador.component';
 import { VersionComponent } from './version/version.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     InformacionComponent,
     DesarrolladorComponent,
     VersionComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    PiedraPapelTijeraComponent
   ],
   imports: [
     BrowserModule,
