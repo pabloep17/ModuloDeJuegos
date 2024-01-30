@@ -1,3 +1,16 @@
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px]">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] bg-[]">
     <p class="bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] rounded-lg md:p-[20px] p-[10px] border">Piedra Papel Tijera</p>
+    <div class="bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] rounded-lg md:p-[20px] p-[10px] border mt-[20px]">
+        <div class="flex justify-between">
+            <img src="./assets/piedraPapelTijera/{{playerSelectionImage}}.png" class="outline-offset-1 w-[60px] h-[60px]"/>
+            <p class="flex items-center">{{msg}}</p>
+            <img src="./assets/piedraPapelTijera/{{computerSelectionImage}}.png" class="outline-offset-1 w-[60px] h-[60px]"/>
+        </div>
+        <hr/>
+        <div class="flex justify-between pt-[10px]">
+            <img (click)="setPlayerSelection(1)" src="./assets/piedraPapelTijera/piedra.png" class="outline-offset-1 w-[60px] h-[60px]"/>
+            <img (click)="setPlayerSelection(2)" src="./assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
+            <img (click)="setPlayerSelection(3)" src="./assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
+        </div>
+    </div>
 </div>
