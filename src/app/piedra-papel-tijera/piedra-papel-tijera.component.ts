@@ -14,7 +14,7 @@ export class PiedraPapelTijeraComponent {
 
   playerSelectionImage:string | undefined = ""
 
-  msg:string = ""
+  msg:string = "Ya puedes jugar"
 
   setPlayerSelection(v:number) {
     

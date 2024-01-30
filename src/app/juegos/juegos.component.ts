@@ -20,6 +20,10 @@ export class JuegosComponent {
   buscador:string = ""
 
   gameClick(v:any) {
+    v.result = {
+      player: 0,
+      computer: 0
+    }
     localStorage.setItem("lastGame", JSON.stringify(v))
   }
 
