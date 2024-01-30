@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Modulo de juegos';
 
-  verMenuMovil:boolean = false
+  verMenuMovil:boolean = true
   viewSelect:string = "Modulo de Juegos"
 
   public nav: Array<any> = [

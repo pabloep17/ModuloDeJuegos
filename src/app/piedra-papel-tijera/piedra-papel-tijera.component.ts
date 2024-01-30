@@ -18,7 +18,7 @@ export class PiedraPapelTijeraComponent {
 
   setPlayerSelection(v:number) {
     
-    this.computerSelection = this.getRandomArbitrary(1, 3)
+    this.computerSelection = this.getRandomArbitrary(1, 4)
 
     this.computerSelectionImage = this.selecciones.get(this.computerSelection)
     this.playerSelectionImage = this.selecciones.get(v)
