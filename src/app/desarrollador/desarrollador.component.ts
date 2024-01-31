@@ -19,13 +19,15 @@ export class DesarrolladorComponent {
     formdata.append("email", this.email);
     formdata.append("body", this.body);
 
+    window.alert(this.email)
+
     var requestOptions = {
       method: 'POST',
       body: formdata,
     };
 
     fetch("https://api.pabloeguilaz.es/", requestOptions)
-      .then(response => {})
+      .then(response => {response.json()})
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
 

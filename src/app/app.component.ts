@@ -5,11 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'Modulo de juegos';
 
-  verMenuMovil:boolean = true
-  viewSelect:string = "Modulo de Juegos"
+  verMenuMovil:boolean = false
+  viewSelect:string = "Inicio"
 
   public nav: Array<any> = [
     { name: "Inicio", href: "inicio"},
