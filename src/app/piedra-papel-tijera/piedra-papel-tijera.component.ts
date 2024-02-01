@@ -16,7 +16,9 @@ export class PiedraPapelTijeraComponent {
 
   msg:string = "Ya puedes jugar"
 
-  setPlayerSelection(v:number) {
+  setPlayerSelection(v:number, e:string) {
+
+    console.log(e)
     
     this.computerSelection = this.getRandomArbitrary(1, 4)
 
