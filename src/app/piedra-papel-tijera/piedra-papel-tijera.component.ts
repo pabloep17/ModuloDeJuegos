@@ -36,9 +36,9 @@ export class PiedraPapelTijeraComponent {
     }
 
     if (this.msg == "Jugador gana") {
-      this.localStorageData.result.player += 1
+      this.localStorageData.result.player -= 1
     } else if (this.msg == "Ordenador gana") {
-      this.localStorageData.result.computer += 1
+      this.localStorageData.result.computer -= 1
     }
 
     localStorage.setItem("lastGame", JSON.stringify(this.localStorageData))
