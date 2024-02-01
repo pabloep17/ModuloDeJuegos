@@ -18,6 +18,8 @@ export class PiedraPapelTijeraComponent {
 
   setPlayerSelection(v:number, e:string) {
 
+    document.getElementById(e)?.classList.add("center")
+
     console.log(e)
     
     this.computerSelection = this.getRandomArbitrary(1, 4)
