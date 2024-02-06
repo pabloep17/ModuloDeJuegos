@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-desarrollador',
@@ -11,6 +12,20 @@ export class DesarrolladorComponent {
   lastname:string = ""
   email:string = ""
   body:string = ""
+
+  constructor(private router:Router) {
+
+  }
+
+  isVisible(elm:any) {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  }
+  
+  goToSection(sectionId:string) {
+    this.router.navigate(['/desarrollador#2'])
+  }
 
   send() {
     var formdata = new FormData();

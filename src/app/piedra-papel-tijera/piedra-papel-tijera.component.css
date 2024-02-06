@@ -1,6 +1,5 @@
 .center {
-    position: absolute;
-    top: 160px;
-    left: 160px;
+    top: 50%;
+    left: 50%;
     transition: all 1s ease-in;
 }

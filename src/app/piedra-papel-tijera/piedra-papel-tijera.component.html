@@ -6,18 +6,18 @@
                 <p>Ho</p>
             </ng-container>
             <div class="flex justify-between">
-                <img src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
-                <img src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
-                <img src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
+                <img id="1" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
+                <img id="2" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
+                <img id="3" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
             </div>
         </div>
         <div class="h-[200px]">
-
+            {{msg}}
         </div>
         <div class="flex justify-between">
-            <img id="4" (click)="setPlayerSelection(0, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
-            <img id="5" (click)="setPlayerSelection(1, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
-            <img id="5" (click)="setPlayerSelection(2, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
+            <img id="4" (click)="setPlayerSelection(0, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px] absolute left-[30px] bottom-[20px]"/>
+            <img id="5" (click)="setPlayerSelection(1, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px] absolute left-[50%] bottom-[20px]"/>
+            <img id="6" (click)="setPlayerSelection(2, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px] absolute right-[30px] bottom-[20px]"/>
         </div>
     </div>
 </div>
