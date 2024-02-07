@@ -64,5 +64,9 @@ export class PiedraPapelTijeraComponent {
     return Math.trunc(Math.random() * (max - min) + min);
   }
 
+  sleep(ms:number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
 
 }

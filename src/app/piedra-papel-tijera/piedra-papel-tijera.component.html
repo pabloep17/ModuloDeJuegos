@@ -1,23 +1,33 @@
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] bg-[]">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] bg-red-100">
     <p class="bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] rounded-lg md:p-[20px] p-[10px] border">Piedra Papel Tijera</p>
     <div class="relative bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] rounded-lg md:p-[20px] p-[10px] border h-auto mt-[20px]">
         <div>
-            <ng-container>
-                <p>Ho</p>
-            </ng-container>
+            <div class="flex w-full justify-center">
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] animate-pulse" />
+            </div>
             <div class="flex justify-between">
                 <img id="1" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
                 <img id="2" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
                 <img id="3" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
             </div>
         </div>
-        <div class="h-[200px]">
+        <div class="h-[300px] flex justify-center items-center">
             {{msg}}
         </div>
-        <div class="flex justify-between">
-            <img id="4" (click)="setPlayerSelection(0, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px] absolute left-[30px] bottom-[20px]"/>
-            <img id="5" (click)="setPlayerSelection(1, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px] absolute left-[50%] bottom-[20px]"/>
-            <img id="6" (click)="setPlayerSelection(2, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px] absolute right-[30px] bottom-[20px]"/>
+        <div class="flex justify-between h-[60px] bg-red-300">
+            <img id="4" (click)="setPlayerSelection(0, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
+            <img id="5" (click)="setPlayerSelection(1, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
+            <img id="6" (click)="setPlayerSelection(2, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
         </div>
+        <div class="flex w-full justify-center">
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] animate-pulse" />
+            </div>
     </div>
 </div>
