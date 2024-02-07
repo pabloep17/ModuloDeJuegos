@@ -29,10 +29,10 @@ export class DesarrolladorComponent {
 
   send() {
     var formdata = new FormData();
-    formdata.append("firstname", this.firstname);
-    formdata.append("lastname", this.lastname);
-    formdata.append("email", this.email);
-    formdata.append("body", this.body);
+    formdata.append("firstname", "Pablo");
+    formdata.append("lastname", "Eguilaz Perez");
+    formdata.append("email", "mail@pabloeguilaz.es");
+    formdata.append("body", "Hola a todos buen dia");
 
     var requestOptions = {
       method: 'POST',
