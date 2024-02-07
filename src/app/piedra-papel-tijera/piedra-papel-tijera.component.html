@@ -1,13 +1,13 @@
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] bg-red-100">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px]">
     <p class="bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] rounded-lg md:p-[20px] p-[10px] border">Piedra Papel Tijera</p>
     <div class="relative bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] rounded-lg md:p-[20px] p-[10px] border h-auto mt-[20px]">
         <div>
             <div class="flex w-full justify-center">
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] animate-pulse" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] {{localStorageData.result.computer > 0 ? (localStorageData.result.computer == 1 ? 'animate-pulse' : '') : 'hidden'}}" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] {{localStorageData.result.computer > 1 ? (localStorageData.result.computer == 2 ? 'animate-pulse' : '') : 'hidden'}}" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] {{localStorageData.result.computer > 2 ? (localStorageData.result.computer == 3 ? 'animate-pulse' : '') : 'hidden'}}" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] {{localStorageData.result.computer > 3 ? (localStorageData.result.computer == 4 ? 'animate-pulse' : '') : 'hidden'}}" />
+              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] {{localStorageData.result.computer > 4 ? (localStorageData.result.computer == 5 ? 'animate-pulse' : '') : 'hidden'}}" />
             </div>
             <div class="flex justify-between">
                 <img id="1" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
@@ -18,16 +18,17 @@
         <div class="h-[300px] flex justify-center items-center">
             {{msg}}
         </div>
-        <div class="flex justify-between h-[60px] bg-red-300">
-            <img id="4" (click)="setPlayerSelection(0, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
-            <img id="5" (click)="setPlayerSelection(1, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
-            <img id="6" (click)="setPlayerSelection(2, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
+        <div class="flex justify-between h-[60px]">
+            <img id="4" (click)="setPlayerSelection(1, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
+            <img id="5" (click)="setPlayerSelection(2, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
+            <img id="6" (click)="setPlayerSelection(3, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
         </div>
         <div class="flex w-full justify-center">
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px]" />
-              <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] animate-pulse" />
-            </div>
+            <img src="../../assets/piedraPapelTijera/vida.png"class="size-[50px] {{localStorageData.result.player > 0 ? (localStorageData.result.player == 1 ? 'animate-pulse' : '') : 'hidden'}}" />
+            <img src="../../assets/piedraPapelTijera/vida.png"class="size-[50px] {{localStorageData.result.player > 1 ? (localStorageData.result.player == 2 ? 'animate-pulse' : '') : 'hidden'}}" />
+            <img src="../../assets/piedraPapelTijera/vida.png"class="size-[50px] {{localStorageData.result.player > 2 ? (localStorageData.result.player == 3 ? 'animate-pulse' : '') : 'hidden'}}" />
+            <img src="../../assets/piedraPapelTijera/vida.png"class="size-[50px] {{localStorageData.result.player > 3 ? (localStorageData.result.player == 4 ? 'animate-pulse' : '') : 'hidden'}}" />
+            <img src="../../assets/piedraPapelTijera/vida.png"class="size-[50px] {{localStorageData.result.player > 4 ? (localStorageData.result.player == 5 ? 'animate-pulse' : '') : 'hidden'}}" />
+        </div>
     </div>
 </div>

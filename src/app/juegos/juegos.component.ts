@@ -21,8 +21,8 @@ export class JuegosComponent {
 
   gameClick(v:any) {
     v.result = {
-      player: 0,
-      computer: 0
+      player: 5,
+      computer: 5
     }
     localStorage.setItem("lastGame", JSON.stringify(v))
   }

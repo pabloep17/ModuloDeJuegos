@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { tick } from '@angular/core/testing';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class PiedraPapelTijeraComponent {
 
-  localStorageData:string | null | any = "" 
+  localStorageData:string | null | any = {result: {computer: 2}}
 
   computerSelection:number = 0
   computerSelectionImage:string | undefined = ""
@@ -24,27 +25,30 @@ export class PiedraPapelTijeraComponent {
     this.computerSelectionImage = this.selecciones.get(this.computerSelection)
     this.playerSelectionImage = this.selecciones.get(v)
 
-    document.getElementById(`${this.computerSelection}`)?.classList.add("center")
-
     switch(this.computerSelection) {
       case 1:
-        this.msg = v == 1 ? "Empate" : v == 2 ? "Jugador gana" : "Ordenador gana"
+        this.msg = v == 1 ? "Empate" : (v == 2 ? "Jugador gana" : "Ordenador gana")
         break
       case 2:
-        this.msg = v == 2 ? "Empate" : v == 3 ? "Jugador gana" : "Ordenador gana"
+        this.msg = v == 2 ? "Empate" : (v == 3 ? "Jugador gana" : "Ordenador gana")
         break
-      case 2:
-        this.msg = v == 3 ? "Empate" : v == 1 ? "Jugador gana" : "Ordenador gana"
+      case 3:
+        this.msg = v == 3 ? "Empate" : (v == 1 ? "Jugador gana" : "Ordenador gana")
+        break
+      default:
+        this.msg = "Error"
         break
     }
 
     if (this.msg == "Jugador gana") {
-      this.localStorageData.result.player -= 1
-    } else if (this.msg == "Ordenador gana") {
       this.localStorageData.result.computer -= 1
+    } else if (this.msg == "Ordenador gana") {
+      this.localStorageData.result.player -= 1
     }
 
     localStorage.setItem("lastGame", JSON.stringify(this.localStorageData))
+
+    console.table(this.localStorageData)
     
   }
 
