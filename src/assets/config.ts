@@ -16,5 +16,40 @@ export const languages: any = [
         "id": 1,
         "name": "Java",
         "icon": "./icons/java.png"
+    },
+    {
+        "id": 2,
+        "name": "Angular",
+        "icon": "./icons/angular.png"
+    },
+    {
+        "id": 3,
+        "name": "Ionic",
+        "icon": "./icons/ionic.png"
+    },
+    {
+        "id": 4,
+        "name": "Firebase",
+        "icon": "./icons/firebase.png"
+    },
+    {
+        "id": 5,
+        "name": "Swift",
+        "icon": "./icons/swift.png"
+    },
+    {
+        "id": 6,
+        "name": "Kotlin",
+        "icon": "./icons/kotlin.png"
+    },
+    {
+        "id": 7,
+        "name": "Flutter",
+        "icon": "./icons/flutter.png"
+    },
+    {
+        "id": 8,
+        "name": "React Native",
+        "icon": "./icons/react.png"
     }
 ]

@@ -6,7 +6,7 @@
         <ng-container *ngFor="let b of languages">
                     
             <div>
-                <button data-tooltip-target="tooltip-{{b.id}}" type="button" class=""><img [src]="b.icon"/></button>
+                <button data-tooltip-target="b.id" type="button" class=""><img [src]="b.icon"/></button>
 
                 <div id="tooltip-{{b.id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                     {{b.name}}
