@@ -11,8 +11,9 @@ export const cv: any = [
     }
 ]
 
-const languages: any = [
+export const languages: any = [
     {
+        "id": 1,
         "name": "Java",
         "icon": "./icons/java.png"
     }
