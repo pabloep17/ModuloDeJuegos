@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { cv } from 'src/assets/config';
 
 @Component({
   selector: 'app-desarrollador',
@@ -13,9 +13,7 @@ export class DesarrolladorComponent {
   email:string = ""
   body:string = ""
 
-  constructor(private router:Router) {
-
-  }
+  cv: any = cv;
   
   goToSection(sectionId:string) {
     const element: any = document.getElementById(sectionId);
