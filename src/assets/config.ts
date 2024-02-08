@@ -10,3 +10,10 @@ export const cv: any = [
         "description": "Bachiller cientifico tecnológico"
     }
 ]
+
+const languages: any = [
+    {
+        "name": "Java",
+        "icon": "./icons/java.png"
+    }
+]

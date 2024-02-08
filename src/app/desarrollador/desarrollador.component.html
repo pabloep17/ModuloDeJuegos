@@ -1,6 +1,16 @@
 <div class="scroll-snap-card md:mb-[90px] mb-[110px]">
     <button (click)="goToSection('contact')">Contact</button>
-    <button (click)="goToSection('esume')">Resume</button>
+    <button (click)="goToSection('resume')">Resume</button>
+    <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
+        
+        <button data-tooltip-target="tooltip-default" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><img src="../../assets/icons/angular.svg"/></button>
+
+        <div id="tooltip-default" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Java
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+
+    </section>
     <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
 
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">Education & Experience</h4>
@@ -26,7 +36,7 @@
             </ng-container>
 
         </div>
-        
+
     </section>
     <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px] dark:bg-[#020102]"/>
     <section id="contact" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-10">
