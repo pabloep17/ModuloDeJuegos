@@ -16,15 +16,10 @@ export class DesarrolladorComponent {
   constructor(private router:Router) {
 
   }
-
-  isVisible(elm:any) {
-    var rect = elm.getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-  }
   
   goToSection(sectionId:string) {
-    this.router.navigate(['/desarrollador#2'])
+    const element: any = document.getElementById(sectionId);
+    element.scrollIntoView({ behavior: "smooth"});
   }
 
   send() {
