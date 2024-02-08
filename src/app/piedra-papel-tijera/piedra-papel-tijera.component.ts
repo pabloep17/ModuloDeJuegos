@@ -46,6 +46,16 @@ export class PiedraPapelTijeraComponent {
       this.localStorageData.result.player -= 1
     }
 
+    if (this.localStorageData.result.computer < 1) {
+      if (window.confirm("Has ganado")) {
+
+      }else {
+        
+      }
+    }else if (this.localStorageData.result.player < 1) {
+      window.alert("El Ordenador Gana")
+    }
+
     localStorage.setItem("lastGame", JSON.stringify(this.localStorageData))
 
     console.table(this.localStorageData)

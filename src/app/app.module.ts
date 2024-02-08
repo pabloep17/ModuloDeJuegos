@@ -11,6 +11,7 @@ import { DesarrolladorComponent } from './desarrollador/desarrollador.component'
 import { VersionComponent } from './version/version.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
+import { JuegoComponent } from './juego/juego.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-t
     DesarrolladorComponent,
     VersionComponent,
     PagenotfoundComponent,
-    PiedraPapelTijeraComponent
+    PiedraPapelTijeraComponent,
+    JuegoComponent
   ],
   imports: [
     BrowserModule,

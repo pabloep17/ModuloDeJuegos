@@ -10,18 +10,24 @@
               <img src="../../assets/piedraPapelTijera/vida.png" class="size-[50px] {{localStorageData.result.computer > 4 ? (localStorageData.result.computer == 5 ? 'animate-pulse' : '') : 'hidden'}}" />
             </div>
             <div class="flex justify-between">
-                <img id="1" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
-                <img id="2" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
-                <img id="3" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
+                <img id="1" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px] {{computerSelection == 1 ? 'bg-slate-400' : ''}}"/>
+                <img id="2" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px] {{computerSelection == 2 ? 'bg-slate-400' : ''}}"/>
+                <img id="3" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px] {{computerSelection == 3 ? 'bg-slate-400' : ''}}"/>
             </div>
         </div>
         <div class="h-[300px] flex justify-center items-center">
             {{msg}}
         </div>
         <div class="flex justify-between h-[60px]">
-            <img id="4" (click)="setPlayerSelection(1, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px]"/>
-            <img id="5" (click)="setPlayerSelection(2, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px]"/>
-            <img id="6" (click)="setPlayerSelection(3, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px]"/>
+            <div class="group">
+                <img id="4" (click)="setPlayerSelection(1, '4')" src="../../assets/piedraPapelTijera/piedra.png" class="w-[60px] h-[60px] group-hover:animate-bounce"/>
+            </div>
+            <div class="group">
+                <img id="4" (click)="setPlayerSelection(2, '5')" src="../../assets/piedraPapelTijera/papel.png" class="w-[60px] h-[60px] group-hover:animate-bounce"/>
+            </div>
+            <div class="group">
+                <img id="4" (click)="setPlayerSelection(3, '6')" src="../../assets/piedraPapelTijera/tijera.png" class="w-[60px] h-[60px] group-hover:animate-bounce"/>
+            </div>
         </div>
         <div class="flex w-full justify-center">
             <img src="../../assets/piedraPapelTijera/vida.png"class="size-[50px] {{localStorageData.result.player > 0 ? (localStorageData.result.player == 1 ? 'animate-pulse' : '') : 'hidden'}}" />
@@ -32,3 +38,4 @@
         </div>
     </div>
 </div>
+    
