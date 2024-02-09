@@ -39,7 +39,9 @@
                         </div>
                         <div class="text-slate-500">{{b.description}}</div>
                         <div class="flex justify-start gap-2">
-                            <img [src]="getLenguageByName('Java').icono" class="w-8 h-8" alt="Java" />
+                            <ng-container *ngFor="let i of cv.languages">
+                                <img [src]="getLenguageByName(i).icono" class="w-8 h-8" alt="Java" />
+                            </ng-container>
                         </div>
                     </div>
                 </div>
