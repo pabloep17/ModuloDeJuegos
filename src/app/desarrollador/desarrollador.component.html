@@ -2,7 +2,7 @@
     <button (click)="goToSection('contact')">Contact</button>
     <button (click)="goToSection('resume')">Resume</button>
     <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
-        <p>{{getLenguageByName('Java')}}</p>
+        <p>{{getLenguageByName('Java').icon}}</p>
         <div class="flex justify-between">
             <ng-container *ngFor="let b of languages">
                     
