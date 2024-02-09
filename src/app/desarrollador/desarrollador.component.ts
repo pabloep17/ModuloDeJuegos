@@ -18,8 +18,6 @@ export class DesarrolladorComponent {
   getLenguageByName: any = getLenguageByName;
   competencies: any = competencies;
   stack:any = stack;
-
-  url:string | undefined = process.env['API_URL'];
   
   goToSection(sectionId:string) {
     const elemento: any = document.getElementById(sectionId);
