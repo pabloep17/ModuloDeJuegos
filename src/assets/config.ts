@@ -2,7 +2,7 @@ export const cv: any = [
     {
         title: "Practicas en empresa",
         interval: "2022 - Actualidad",
-        description: "Desarrollo de API REST con Java, Spring Boot, Node.js, Express, etc.",
+        description: "Desarrollo de API REST con Java, Node.js, Express, etc.",
         languages: ["Java", "Swift", "Angular", "IntelliJ IDEA", "VS Code"]
     },
     {

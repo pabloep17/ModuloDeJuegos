@@ -18,8 +18,14 @@ export class DesarrolladorComponent {
   getLenguageByName: any = getLenguageByName;
   
   goToSection(sectionId:string) {
-    const element: any = document.getElementById(sectionId);
-    element.scrollIntoView({ behavior: "smooth"});
+    const elemento: any = document.getElementById(sectionId);
+    var offset = 80; // Espacio de 10px antes del elemento
+    var elementoPosicion = elemento.getBoundingClientRect().top;
+    var posicionScroll = window.pageYOffset || document.documentElement.scrollTop;
+    window.scrollTo({
+        top: elementoPosicion + posicionScroll - offset,
+        behavior: 'smooth'
+    });
   }
 
   send() {
