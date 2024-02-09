@@ -8,7 +8,7 @@ export const cv: any = [
     {
         title: "Desarrollador App Móviles",
         interval: "2022 - Actualidad",
-        description: "IES Doctor Fleming\nDesarrollo de aplicaciones móviles con Java, Angular, Ionic, Firebase, Swift, Kotlin, Flutter, React Native, etc.",
+        description: "Desarrollo de aplicaciones móviles con Java, Angular, Ionic, Firebase, Swift, Kotlin, Flutter, React Native, etc.",
         languages: ["Java", "Angular", "HTML5", "Css", "JS", "IntelliJ IDEA", "VS Code"]
     },
     {
