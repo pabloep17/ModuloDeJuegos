@@ -56,6 +56,10 @@ export const stack: any = [
                 icon: "icons/angular.svg" 
             },
             {
+                name: "React",
+                icon: "icons/react.svg" 
+            },
+            {
                 name: "HTML5",
                 icon: "icons/html_5.svg" 
             },
