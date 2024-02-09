@@ -221,6 +221,20 @@ export const tools: any = [
 ]
 
 
+export const idioms: any = [
+    {
+        "id": 1,
+        "name": "Español",
+        "icon": "icons/spain.svg"
+    },
+    {
+        "id": 2,
+        "name": "Inglés",
+        "icon": "icons/uk.svg"
+    }
+]
+
+
 
 export const getLenguageByName = (name: string) => {
     return tools.find((tool: any) => tool.name === name);
