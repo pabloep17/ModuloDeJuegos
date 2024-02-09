@@ -107,3 +107,7 @@ export const tools: any = [
 export const getLenguageByName = (name: string) => {
     return tools.find((tool: any) => tool.name === name);
 }
+
+export const getResumeById = (id: number) => {
+    return resume.find((resume: any) => resume.id === id);
+}
