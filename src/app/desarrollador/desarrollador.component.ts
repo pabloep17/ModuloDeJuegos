@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { cv, languages, getLenguageByName } from 'src/assets/config';
+import { resume, tools, getLenguageByName } from 'src/assets/config';
 
 @Component({
   selector: 'app-desarrollador',
@@ -13,8 +13,8 @@ export class DesarrolladorComponent {
   email:string = ""
   body:string = ""
 
-  cv: any = cv;
-  languages: any = languages;
+  resume: any = resume;
+  tools: any = tools;
   getLenguageByName: any = getLenguageByName;
   
   goToSection(sectionId:string) {

@@ -1,4 +1,4 @@
-export const cv: any = [
+export const resume: any = [
     {
         title: "Practicas en empresa",
         interval: "2022 - Actualidad",
@@ -18,7 +18,7 @@ export const cv: any = [
     }
 ]
 
-export const languages: any = [
+export const tools: any = [
     {
         "id": 1,
         "name": "Java",
@@ -88,9 +88,16 @@ export const languages: any = [
         "id": 14,
         "name": "NPM",
         "icon": "icons/npm.svg"
+    },
+    {
+        "id": 15,
+        "name": "Xcode",
+        "icon": "icons/xcode.svg"
     }
 ]
 
+
+
 export const getLenguageByName = (name: string) => {
-    return languages.find((language: any) => language.name === name);
+    return tools.find((tool: any) => tool.name === name);
 }
