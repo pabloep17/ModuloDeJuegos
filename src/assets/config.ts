@@ -15,7 +15,7 @@ export const languages: any = [
     {
         "id": 1,
         "name": "Java",
-        "icon": "../assets/icons/java.png"
+        "icon": "icons/java.png"  
     },
     {
         "id": 2,
