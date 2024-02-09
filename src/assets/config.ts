@@ -24,32 +24,27 @@ export const languages: any = [
     },
     {
         "id": 3,
-        "name": "Ionic",
-        "icon": "icons/ionic.svg"
+        "name": "HTML5",
+        "icon": "icons/html_5.svg"
     },
     {
         "id": 4,
-        "name": "Firebase",
-        "icon": "icons/firebase.svg"
+        "name": "JS",
+        "icon": "icons/js.svg"
     },
     {
         "id": 5,
-        "name": "Swift",
-        "icon": "icons/swift.svg"
+        "name": "PHP",
+        "icon": "icons/php.svg"
     },
     {
         "id": 6,
-        "name": "Kotlin",
-        "icon": "icons/kotlin.svg"
+        "name": "Python",
+        "icon": "icons/python.svg"
     },
     {
         "id": 7,
-        "name": "Flutter",
-        "icon": "icons/flutter.svg"
+        "name": "Swift",
+        "icon": "icons/swift.svg"
     },
-    {
-        "id": 8,
-        "name": "React Native",
-        "icon": "icons/react.svg"
-    }
 ]
