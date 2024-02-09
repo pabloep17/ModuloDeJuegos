@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { resume, tools, getLenguageByName } from 'src/assets/config';
+import { resume, tools, competencies, stack, getLenguageByName } from 'src/assets/config';
 
 @Component({
   selector: 'app-desarrollador',
@@ -16,6 +16,8 @@ export class DesarrolladorComponent {
   resume: any = resume;
   tools: any = tools;
   getLenguageByName: any = getLenguageByName;
+  competencies: any = competencies;
+  stack:any = stack;
   
   goToSection(sectionId:string) {
     const elemento: any = document.getElementById(sectionId);

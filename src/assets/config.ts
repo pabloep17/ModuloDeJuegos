@@ -1,6 +1,6 @@
 export const resume: any = [
     {
-        id: 1,
+        id: 3,
         title: "Practicas en empresa",
         place: "Empresa nº1",
         interval: "2022 - Actualidad",
@@ -16,11 +16,105 @@ export const resume: any = [
         languages: ["Java", "Angular", "HTML5", "Css", "JS", "IntelliJ IDEA", "VS Code"]
     },
     {
-        id: 3,
+        id: 1,
         title: "Bachiller cientifico tecnológico",
         place: "IES Carmen y Severo Ochoa",
         interval: "2020 - 2022",
         short_description: "IES Carmen y Severo Ochoa"
+    }
+]
+
+export const competencies: any = [
+    {
+        id: 1,
+        name: "Compromiso"
+    },
+    {
+        id: 2,
+        name: "Resolución de problemas"
+    },
+    {
+        id: 3,
+        name: "Comunicación"
+    },
+    {
+        id: 4,
+        name: "Trabajo en equipo"
+    }
+]
+
+export const stack: any = [
+    {
+        name: "Front-end",
+        languages: [
+            {
+                name: "Swift",
+                icon: "icons/swift.svg" 
+            },
+            {
+                name: "Angular",
+                icon: "icons/angular.svg" 
+            },
+            {
+                name: "HTML5",
+                icon: "icons/html_5.svg" 
+            },
+            {
+                name: "Css",
+                icon: "icons/css_3.svg" 
+            },
+            {
+                name: "JS",
+                icon: "icons/js.svg" 
+            }
+        ]
+    },
+    {
+        name: "Back-end",
+        languages: [
+            {
+                name: "Java",
+                icon: "icons/java.svg" 
+            },
+            {
+                name: "PHP",
+                icon: "icons/php.svg" 
+            },
+            {
+                name: "Python",
+                icon: "icons/python.svg" 
+            },
+            {
+                name: "NodeJs",
+                icon: "icons/node_js.svg" 
+            }
+        ]
+    },
+    {
+        name: "Bases de datos",
+        languages: [
+            {
+                name: "Json",
+                icon: "icons/php.svg" 
+            }
+        ]
+    },
+    {
+        name: "IDEs",
+        languages: [
+            {
+                name: " IntelliJ IDEA",
+                icon: "icons/jb_IntelliJ_IDEA.svg" 
+            },
+            {
+                name: " VS Code",
+                icon: "icons/vs_code.svg" 
+            },
+            {
+                name: "Pycharm",
+                icon: "icons/jb_pycharm.svg" 
+            }
+        ]
     }
 ]
 
