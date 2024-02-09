@@ -38,6 +38,11 @@ export const languages: any = [
         "icon": "icons/js.svg"
     },
     {
+        "id": 8,
+        "name": "Css",
+        "icon": "icons/css_3.svg"
+    },
+    {
         "id": 5,
         "name": "PHP",
         "icon": "icons/php.svg"
@@ -51,5 +56,9 @@ export const languages: any = [
         "id": 7,
         "name": "Swift",
         "icon": "icons/swift.svg"
-    },
+    }
 ]
+
+export const getLenguageByName = (name: string) => {
+    return languages.find((language: any) => language.name === name);
+}
