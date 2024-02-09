@@ -3,18 +3,21 @@
     <button (click)="goToSection('resume')">Resume</button>
     <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
 
-        <ng-container *ngFor="let b of languages">
+        <div class="flex justify-between">
+            <ng-container *ngFor="let b of languages">
                     
-            <div>
-                <button [attr.data-tooltip-target]="'tooltip-' + b.id" type="button" class=""><img [src]="b.icon"/></button>
-
-                <div id="tooltip-{{b.id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                    {{b.name}}
-                    <div class="tooltip-arrow" data-popper-arrow></div>
+                <div>
+                    <button [attr.data-tooltip-target]="'tooltip-' + b.id" type="button" class=""><img [src]="b.icon"/></button>
+    
+                    <div id="tooltip-{{b.id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        {{b.name}}
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
                 </div>
-            </div>
-
-        </ng-container>
+    
+            </ng-container>
+        </div>
+    
     </section>
     <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
 
