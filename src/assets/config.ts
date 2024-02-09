@@ -60,41 +60,31 @@ export const languages: any = [
     },
     {
         "id": 9,
-        "name": "Node.js",
-        "icon": "icons/nodejs.svg"
-    },
-    {
-        "id": 10,
         "name": "React",
         "icon": "icons/react.svg"
     },
     {
-        "id": 11,
-        "name": "Vue",
-        "icon": "icons/vue.svg"
-    },
-    {
-        "id": 12,
+        "id": 10,
         "name": "VS Code",
         "icon": "icons/vs_code.svg"
     },
     {
-        "id": 13,
+        "id": 11,
         "name": "IntelliJ IDEA",
         "icon": "icons/jb_IntelliJ_IDEA.svg"
     },
     {
-        "id": 13,
+        "id": 12,
         "name": "Pycharm",
         "icon": "icons/jb_pycharm.svg"
     },
     {
-        "id": 14,
+        "id": 13,
         "name": "NodeJs",
         "icon": "icons/node_js.svg"
     },
     {
-        "id": 15,
+        "id": 14,
         "name": "NPM",
         "icon": "icons/npm.svg"
     }
