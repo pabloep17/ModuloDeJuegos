@@ -70,6 +70,14 @@ export const stack: any = [
             {
                 name: "JS",
                 icon: "icons/js.svg" 
+            },
+            {
+                name: "TS",
+                icon: "icons/ts.svg" 
+            },
+            {
+                name: "Tailwindcss",
+                icon: "icons/tailwildcss.svg" 
             }
         ]
     },
@@ -98,8 +106,20 @@ export const stack: any = [
         name: "Bases de datos",
         languages: [
             {
-                name: "Json",
-                icon: "icons/php.svg" 
+                name: "MariaDB",
+                icon: "icons/mariadb.svg" 
+            },
+            {
+                name: "MongoDB",
+                icon: "icons/mongodb.svg" 
+            },
+            {
+                name: "Firebase",
+                icon: "icons/firebase.svg" 
+            },
+            {
+                name: "MySQL",
+                icon: "icons/mysql.svg"
             }
         ]
     },
