@@ -1,18 +1,19 @@
 export const cv: any = [
     {
-        "title": "Practicas en empresa",
-        "interval": "2022 - Actualidad",
-        "description": "Desarrollo de API REST con Java, Spring Boot, Node.js, Express, etc."
+        title: "Practicas en empresa",
+        interval: "2022 - Actualidad",
+        description: "Desarrollo de API REST con Java, Spring Boot, Node.js, Express, etc.",
+        languages: ["Java", "Swift", "Angular", "Python"]
     },
     {
-        "title": "Desarrollador App Móviles",
-        "interval": "2022 - Actualidad",
-        "description": "Desarrollo de aplicaciones móviles con Java, Angular, Ionic, Firebase, Swift, Kotlin, Flutter, React Native, etc."
+        title: "Desarrollador App Móviles",
+        interval: "2022 - Actualidad",
+        description: "Desarrollo de aplicaciones móviles con Java, Angular, Ionic, Firebase, Swift, Kotlin, Flutter, React Native, etc."
     },
     {
-        "title": "IES Carmen y Severo Ochoa",
-        "interval": "2020 - 2022",
-        "description": "Bachiller cientifico tecnológico"
+        title: "IES Carmen y Severo Ochoa",
+        interval: "2020 - 2022",
+        description: "Bachiller cientifico tecnológico"
     }
 ]
 
