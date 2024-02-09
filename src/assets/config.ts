@@ -39,11 +39,6 @@ export const languages: any = [
         "icon": "icons/js.svg"
     },
     {
-        "id": 8,
-        "name": "Css",
-        "icon": "icons/css_3.svg"
-    },
-    {
         "id": 5,
         "name": "PHP",
         "icon": "icons/php.svg"
@@ -57,6 +52,51 @@ export const languages: any = [
         "id": 7,
         "name": "Swift",
         "icon": "icons/swift.svg"
+    },
+    {
+        "id": 8,
+        "name": "Css",
+        "icon": "icons/css_3.svg"
+    },
+    {
+        "id": 9,
+        "name": "Node.js",
+        "icon": "icons/nodejs.svg"
+    },
+    {
+        "id": 10,
+        "name": "React",
+        "icon": "icons/react.svg"
+    },
+    {
+        "id": 11,
+        "name": "Vue",
+        "icon": "icons/vue.svg"
+    },
+    {
+        "id": 12,
+        "name": "VS Code",
+        "icon": "icons/vs_code.svg"
+    },
+    {
+        "id": 13,
+        "name": "IntelliJ IDEA",
+        "icon": "icons/jb_IntelliJ_IDEA.svg"
+    },
+    {
+        "id": 13,
+        "name": "Pycharm",
+        "icon": "icons/jb_pycharm.svg"
+    },
+    {
+        "id": 14,
+        "name": "NodeJs",
+        "icon": "icons/node_js.svg"
+    },
+    {
+        "id": 15,
+        "name": "NPM",
+        "icon": "icons/npm.svg"
     }
 ]
 
