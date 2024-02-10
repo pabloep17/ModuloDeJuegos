@@ -144,7 +144,16 @@ export const stack: any = [
 
 export const changelog: any = [
     {
-        
+        title: "Improvements & Bug Fixes",
+        datetime: "December 28, 2023",
+        description: "This update brings minor enhancements and resolves issues based on feedback reported on",
+        version: "V2.0.3",
+        changes: [
+            {
+                type: "Improved",
+                content: "as",
+            }
+        ]        
     }
 ]
 
