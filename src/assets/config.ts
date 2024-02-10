@@ -154,6 +154,18 @@ export const changelog: any = [
                 content: `Updated script file name from <code>index.js</code> to <code>preline.js</code>`,
             }
         ]        
+    },
+    {
+        title: "Creacion del proyecto",
+        datetime: "Enero 14, 2024",
+        description: `Creacion del proyecto para la asignatura de Desarrollo de Aplicaciones Multiplataforma`, 
+        version: "V1.0.0",
+        changes: [
+            {
+                type: "Create",
+                content: `Añadido el proyecto a github`,
+            }
+        ]        
     }
 ]
 
