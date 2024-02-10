@@ -146,12 +146,12 @@ export const changelog: any = [
     {
         title: "Improvements & Bug Fixes",
         datetime: "December 28, 2023",
-        description: "This update brings minor enhancements and resolves issues based on feedback reported on",
+        description: `Updated script file name from <code class="text-red-700 bg-gray-200 rounded-sm whitespace-no-wrap pl-[3px] pr-[3px] p-[2px] text-[13px]">index.js</code> to <code class="text-red-700 bg-gray-200 rounded-sm whitespace-no-wrap pl-[3px] pr-[3px] p-[2px] text-[13px]">preline.js</code>`,
         version: "V2.0.3",
         changes: [
             {
                 type: "Improved",
-                content: "as",
+                content: `Updated script file name from <code>index.js</code> to <code>preline.js</code>`,
             }
         ]        
     }

@@ -39,7 +39,7 @@
                   <a class="group inline-flex items-center gap-x-2 font-semibold text-gray-800 dark:text-white" href="#v2_0_3">{{v.title}}</a>
                 </h2>
     
-                <p class="mt-1.5 sm:mt-3 text-sm text-gray-600 dark:text-gray-400">{{v.description}}</p>
+                <p class="mt-1.5 sm:mt-3 text-sm text-gray-600 dark:text-gray-400" [innerHTML]="v.description"></p>
     
                 <!-- Fixes and Improvements -->
                 <div class="mt-5 sm:mt-10">
