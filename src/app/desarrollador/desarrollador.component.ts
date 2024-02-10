@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { resume, tools, competencies, stack, getLenguageByName } from 'src/assets/config';
+import { getStack } from 'src/assets/config';
 
 @Component({
   selector: 'app-desarrollador',
@@ -13,11 +13,13 @@ export class DesarrolladorComponent {
   email:string = ""
   body:string = ""
 
+  /*
   resume: any = resume;
   tools: any = tools;
   getLenguageByName: any = getLenguageByName;
   competencies: any = competencies;
-  stack:any = stack;
+  */
+  stack:any = getStack;
   
   goToSection(sectionId:string) {
     const elemento: any = document.getElementById(sectionId);
