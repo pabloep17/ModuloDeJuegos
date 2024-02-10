@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { changelog } from '../../assets/config';
+import { getChangelog } from '../../assets/config';
 
 @Component({
   selector: 'app-version',
@@ -7,5 +7,12 @@ import { changelog } from '../../assets/config';
   styleUrls: ['./version.component.css']
 })
 export class VersionComponent {
-  changelog:any = changelog
+  changelog:any = []
+  
+  ngOnInit() {
+    getChangelog().then(data => {
+      this.changelog = data
+    });
+  }
+
 }

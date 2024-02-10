@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getStack } from 'src/assets/config';
+import { getResume, getStack, getTools, getCompetencies } from 'src/assets/config';
 
 @Component({
   selector: 'app-desarrollador',
@@ -13,13 +13,29 @@ export class DesarrolladorComponent {
   email:string = ""
   body:string = ""
 
-  /*
-  resume: any = resume;
-  tools: any = tools;
-  getLenguageByName: any = getLenguageByName;
-  competencies: any = competencies;
-  */
-  stack:any = getStack;
+  resume: any = [];
+  tools: any = [];
+  competencies: any = [];
+  stack:any = [];
+
+  ngOnInit() {
+    getStack().then(data => {
+      this.stack = data
+    });
+    getTools().then(data => {
+      this.tools = data
+    })
+    getResume().then(data => {
+      this.resume = data
+    })
+    getCompetencies().then(data => {
+      this.competencies = data
+    })
+  }
+
+  getLenguageByName(name:string) {
+    return this.tools.find((tool: any) => tool.name === name);
+  }
   
   goToSection(sectionId:string) {
     const elemento: any = document.getElementById(sectionId);
