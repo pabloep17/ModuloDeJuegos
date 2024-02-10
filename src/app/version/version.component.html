@@ -55,7 +55,7 @@
                   <ul class="sm:list-disc text-gray-900 sm:ms-5 mt-3 space-y-1.5 dark:text-gray-200">
                         <ng-container *ngFor="let c of v.changes">               
                             <li class="ps-1 sm:ps-1 text-sm text-gray-600 dark:text-gray-400">
-                                <span class="inline-flex items-center gap-x-2 text-gray-800 font-semibold dark:text-gray-200">{{c.type}}:</span>
+                                <span class="inline-flex items-center gap-x-2 text-gray-800 font-semibold dark:text-gray-200 pl-[5px]">{{c.type}}:</span>
                                 <span [innerHTML]="c.content"></span>
                             </li>
                         </ng-container>

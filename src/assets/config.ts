@@ -144,14 +144,18 @@ export const stack: any = [
 
 export const changelog: any = [
     {
-        title: "Improvements & Bug Fixes",
-        datetime: "December 28, 2023",
-        description: `Updated script file name from <code class="text-red-700 bg-gray-200 rounded-sm whitespace-no-wrap pl-[3px] pr-[3px] p-[2px] text-[13px]">index.js</code> to <code class="text-red-700 bg-gray-200 rounded-sm whitespace-no-wrap pl-[3px] pr-[3px] p-[2px] text-[13px]">preline.js</code>`,
-        version: "V2.0.3",
+        title: "Piedra, papel o tijera",
+        datetime: "December 20, 2024",
+        description: `Añadido el juego de piedra, papel o tijera al proyecto`,
+        version: "V1.0.1",
         changes: [
             {
                 type: "Improved",
-                content: `Updated script file name from <code>index.js</code> to <code>preline.js</code>`,
+                content: `Añadido el juego de piedra, papel o tijera al proyecto`,
+            },
+            {
+                type: "Fixed",
+                content: `Corregido el error que no permitia usar la navBar en la vista movil`,
             }
         ]        
     },
