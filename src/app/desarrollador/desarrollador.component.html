@@ -35,8 +35,8 @@
                         </div>
                         <ng-container *ngFor="let l of b.languages">
                             <div class="flex gap-2 mt-[5px]">
-                                <img [src]="l.icon" class="size-[20px]"/>
-                                <p class="text-sm">{{l.name}}</p>
+                                <img [src]="getToolById(l).icon" class="size-[20px]"/>
+                                <p class="text-sm">{{getToolById(l).name}}</p>
                             </div>
                         </ng-container>
                     </div>
@@ -90,7 +90,7 @@
                         <div class="text-slate-500">{{b.short_description}}</div>
                         <div class="flex justify-start gap-2 pt-[7px]">
                             <ng-container *ngFor="let i of b.languages">
-                                <img [src]="getLenguageByName(i).icon" class="size-[22px] m-px rounded-sm" [alt]="getLenguageByName(i).name" />
+                                <img [src]="getToolById(i).icon" class="size-[22px] m-px rounded-sm" [alt]="getToolById(i).name" />
                             </ng-container>
                         </div>
                     </div>

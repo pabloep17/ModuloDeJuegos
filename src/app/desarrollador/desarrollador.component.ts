@@ -33,8 +33,8 @@ export class DesarrolladorComponent {
     })
   }
 
-  getLenguageByName(name:string) {
-    return this.tools.find((tool: any) => tool.name === name);
+  getToolById(id:string) {
+    return this.tools.find((tool:any) => tool.id === id)
   }
   
   goToSection(sectionId:string) {
