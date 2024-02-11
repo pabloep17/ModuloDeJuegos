@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { getChangelog } from '../../assets/config';
 
 @Component({
@@ -8,8 +9,15 @@ import { getChangelog } from '../../assets/config';
 })
 export class VersionComponent {
   changelog:any = []
+
+  constructor(private route: ActivatedRoute) { }
+
+  v:string = ""
   
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.v = params['version']
+    });
     getChangelog().then(data => {
       this.changelog = data
     });
