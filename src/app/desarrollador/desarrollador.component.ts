@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getResume, getStack, getTools, getCompetencies } from 'src/assets/config';
+import { getResume, getStack, getTools, getCompetencies } from 'src/assets/functions';
 
 @Component({
   selector: 'app-desarrollador',
