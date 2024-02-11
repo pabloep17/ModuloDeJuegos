@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'juegos', component: JuegosComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},
+  { path: 'desarrollador/resume/:id', component: DesarrolladorComponent},
   { path: 'version', component: VersionComponent},
   { path: 'version/:version', component: VersionComponent},
   { path: 'juegos/piedra-papel-tijera', component: PiedraPapelTijeraComponent},
