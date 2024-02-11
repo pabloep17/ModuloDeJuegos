@@ -2,6 +2,7 @@
     <button (click)="goToSection('contact')">Contact</button>
     <button (click)="goToSection('resume')">Resume</button>
     <button (click)="goToSection('competencias')">Competencias</button>
+    {{id}}
     <!--
     <section id="" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
         <div class="flex justify-between">
@@ -25,10 +26,12 @@
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">No se que poner</h4>
         <h2 class="text-5xl leading-10 font-bold w-full text-center pt-[20px] pb-[20px] text-black dark:text-white">Stack Tecnológico</h2>
 
+        <div *ngIf="stack.length == 0">Cargando</div>
+
         <div class="grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
             
             <ng-container *ngFor="let b of stack">
-                <div routerLink="./competencies/{{b.id}}" class="relative w-full md:justify-normal group is-active">
+                <div routerLink="./stack/{{b.name.replaceAll(' ', '')}}" class="relative w-full md:justify-normal group is-active">
                     <div class="bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow cursor-pointer">
                         <div class="w-full block lg:flex items-center justify-between lg:space-x-2 mb-2">
                             <div class="font-bold text-black dark:text-white">{{b.name}}</div>
@@ -100,9 +103,9 @@
         </div>
 
     </section>
-    <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px] dark:bg-[#020102]"/>
-    <section id="contact" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-10">
-        <div class="relative isolate dark:bg-[#020102]">
+    <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px]"/>
+    <section id="contact" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px]  z-10">
+        <div class="relative isolate ">
             <!--
             <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
                 <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] ml-[347px] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem] mt-[200px]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
@@ -117,13 +120,13 @@
                     <div>
                         <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">First name</label>
                         <div class="mt-2.5">
-                            <input type="text" name="first-name" [(ngModel)]="firstname" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-black">
+                            <input type="text" name="first-name" [(ngModel)]="firstname" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-box_border dark:ring-box_border_dark placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-box dark:bg-body_dark border-box_border dark:border-body_dark dark:text-white">
                         </div>
                     </div>
                     <div>
                         <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">Last name</label>
                         <div class="mt-2.5">
-                            <input type="text" name="last-name" [(ngModel)]="lastname" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <input type="text" name="last-name" [(ngModel)]="lastname" id="last-name" autocomplete="family-name" class="lock w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-box_border dark:ring-box_border_dark placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-box dark:bg-body_dark border-box_border dark:border-body_dark dark:text-white">
                         </div>
                     </div>
                     <div class="sm:col-span-2">
@@ -135,13 +138,13 @@
                                 <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
                             </svg>
                             </div>
-                            <input type="email" name="email" [(ngModel)]="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@dominio.com">
+                            <input type="email" name="email" [(ngModel)]="email" class="lock w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-box_border dark:ring-box_border_dark placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-box dark:bg-body_dark border-box_border dark:border-body_dark dark:text-white pl-[40px]" placeholder="name@dominio.com">
                         </div>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="message" class="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">Message</label>
                         <div class="mt-2.5">
-                            <textarea name="message" id="message" rows="4" [(ngModel)]="body" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            <textarea name="message" id="message" rows="4" [(ngModel)]="body" class="lock w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-box_border dark:ring-box_border_dark placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-box dark:bg-body_dark border-box_border dark:border-body_dark dark:text-white"></textarea>
                         </div>
                     </div>
                 </div>

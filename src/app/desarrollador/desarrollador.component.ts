@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { getResume, getStack, getTools, getCompetencies } from 'src/assets/functions';
 
 @Component({
@@ -7,6 +8,9 @@ import { getResume, getStack, getTools, getCompetencies } from 'src/assets/funct
   styleUrls: ['./desarrollador.component.css']
 })
 export class DesarrolladorComponent {
+
+
+  constructor(private route: ActivatedRoute) { }
 
   firstname:string = ""
   lastname:string = ""
@@ -18,7 +22,12 @@ export class DesarrolladorComponent {
   competencies: any = [];
   stack:any = [];
 
+  id: string = '';
+
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.id = params['id']
+    });
     getStack().then(data => {
       this.stack = data
     });
