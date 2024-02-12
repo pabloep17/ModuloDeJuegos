@@ -1,12 +1,11 @@
 <div class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] dark:bg-[#020102] z-20">
-  {{v}}
     <ng-container *ngFor="let v of changelog">
         <div class="sm:flex">
             <!-- Left Side -->
             <div class="relative z-10 sm:ps-0 sm:pb-20 sm:w-1/4 sm:text-end">
               <div class="sm:sticky sm:top-[5rem] sm:end-0">
                 <div class="ps-7 sm:pe-[1.6125rem]">
-                  <a class="inline-block py-1 px-2 rounded-lg text-xs font-medium bg-gray-800 text-white dark:bg-gray-700" routerLink="./{{v.version}}">{{v.version}}</a>
+                  <a class="inline-block py-1 px-2 rounded-lg text-xs font-medium bg-gray-800 text-white dark:bg-gray-700" routerLink="./{{v.id}}">{{v.version}}</a>
                 </div>
                 <div class="flex items-center gap-x-3 py-2 px-3.5 border border-transparent rounded-full mt-0.5 -ms-7 sm:ms-0 sm:-me-7">
                   <div class="grow order-2 sm:order-1">
@@ -37,7 +36,7 @@
     
               <div>
                 <h2 id="v2_0_3" class="scroll-mt-10">
-                  <a class="group inline-flex items-center gap-x-2 font-semibold text-gray-800 dark:text-white" routerLink="./{{v.version}}">{{v.title}}</a>
+                  <a class="group inline-flex items-center gap-x-2 font-semibold text-gray-800 dark:text-white" routerLink="./{{v.id}}">{{v.title}}</a>
                 </h2>
     
                 <p class="mt-1.5 sm:mt-3 text-sm text-gray-600 dark:text-gray-400" [innerHTML]="v.description"></p>
@@ -54,13 +53,13 @@
                   </div>
     
                   <ul class="sm:list-disc text-gray-900 sm:ms-5 mt-3 space-y-1.5 dark:text-gray-200">
-                        <ng-container *ngFor="let c of v.changes">               
-                            <li class="ps-1 sm:ps-1 text-sm text-gray-600 dark:text-gray-400">
-                                <span class="inline-flex items-center gap-x-2 text-gray-800 font-semibold dark:text-gray-200 pl-[5px] pr-[3px]">{{c.type}}:</span>
-                                <span [innerHTML]="c.content"></span>
-                            </li>
-                        </ng-container>
-                    </ul>
+                    <ng-container *ngFor="let c of v.changes">               
+                        <li class="ps-1 sm:ps-1 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="inline-flex items-center gap-x-2 text-gray-800 font-semibold dark:text-gray-200 pl-[5px] pr-[3px]">{{c.type}}:</span>
+                            <span [innerHTML]="c.content"></span>
+                        </li>
+                    </ng-container>
+                  </ul>
                 </div>
                 <!-- End Fixes and Improvements -->
               </div>

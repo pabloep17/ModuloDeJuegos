@@ -72,3 +72,33 @@ export const getChangelog = async() => {
         return null;
     }
 }
+
+export const getChangelogById = async(id: string) => {
+    try {
+        const response = await fetch(`https://pabloeguilazperez.github.io/PabloEguilazPerez/changelog/${id}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+}
+
+export const getToolById = async(id: number) => {
+    try {
+        const response = await fetch(`https://pabloeguilazperez.github.io/PabloEguilazPerez/tools/${id}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+}
