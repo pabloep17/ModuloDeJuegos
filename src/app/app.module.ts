@@ -14,6 +14,7 @@ import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-t
 import { JuegoComponent } from './juego/juego.component';
 import { VersionDetailComponent } from './version-detail/version-detail.component';
 import { ResumeComponent } from './resume/resume.component';
+import { MemoryComponent } from './memory/memory.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ResumeComponent } from './resume/resume.component';
     PiedraPapelTijeraComponent,
     JuegoComponent,
     VersionDetailComponent,
-    ResumeComponent
+    ResumeComponent,
+    MemoryComponent
   ],
   imports: [
     BrowserModule,

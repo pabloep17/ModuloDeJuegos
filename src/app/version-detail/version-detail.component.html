@@ -26,7 +26,7 @@
                     </ng-container>
                 </article>
                 <article *ngIf="version.files.length != 0" class="pt-[40px]">
-                    <p class="font-bold text-xl pb-[20px]">Archivos</p>
+                    <p class="font-bold text-xl pb-[20px]">Archivos modificados</p>
                     <div class="grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
                         <ng-container *ngFor="let v of version.files">        
                             <div class="w-full flex gap-2 bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow cursor-pointer">

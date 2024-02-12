@@ -8,11 +8,11 @@ import { VersionComponent } from './version/version.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-tijera.component';
 import { VersionDetailComponent } from './version-detail/version-detail.component';
+import { MemoryComponent } from './memory/memory.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent},
   { path: 'inicio', component: InicioComponent},
-  { path: 'juegos', component: JuegosComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},
   { path: 'desarrollador/resume/:id', component: DesarrolladorComponent},
@@ -20,6 +20,8 @@ const routes: Routes = [
   { path: 'version', component: VersionComponent},
   { path: 'version/:version', component: VersionDetailComponent},
   { path: 'juegos/piedra-papel-tijera', component: PiedraPapelTijeraComponent},
+  { path: 'juegos/memory', component: MemoryComponent},
+  { path: 'juegos', component: JuegosComponent},
   { path: '**', component: PagenotfoundComponent},
 ];
 
