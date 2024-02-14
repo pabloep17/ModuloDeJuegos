@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,13 @@ export class AppComponent {
   title = 'Modulo de juegos';
 
   ngOnInit(): void {
-    initFlowbite();
+    const urlActual = window.location;
+    const urlObj = new URL(urlActual.toString());
+    const pathname = urlObj.pathname;
+    const partesRuta = pathname.split("/");
+    const palabraInicio = partesRuta[partesRuta.length - 1];
+    this.title = palabraInicio
+    this.viewSelect = palabraInicio.charAt(0).toUpperCase() + palabraInicio.slice(1);
   }
 
   verMenuMovil:boolean = false
@@ -27,6 +32,7 @@ export class AppComponent {
 
   setViewSelect(v: string) {
     this.viewSelect = v
+    this.title = v
   }
 
   setVerMenuMovil(v: boolean) {

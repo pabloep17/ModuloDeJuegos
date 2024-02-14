@@ -1,0 +1,6 @@
+<div class="">
+    <div class="absolute bottom-[45px] z-10 inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-{{opacity}} tooltip dark:bg-gray-700">
+        {{language.name}}
+    </div>
+    <img [src]="language.icon" class="size-[22px] m-px rounded-sm" [alt]="language.name" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" />
+</div>

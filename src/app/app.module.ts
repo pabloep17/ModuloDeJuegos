@@ -15,6 +15,7 @@ import { JuegoComponent } from './juego/juego.component';
 import { VersionDetailComponent } from './version-detail/version-detail.component';
 import { ResumeComponent } from './resume/resume.component';
 import { MemoryComponent } from './memory/memory.component';
+import { LanguageviewComponent } from './languageview/languageview.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MemoryComponent } from './memory/memory.component';
     JuegoComponent,
     VersionDetailComponent,
     ResumeComponent,
-    MemoryComponent
+    MemoryComponent,
+    LanguageviewComponent
   ],
   imports: [
     BrowserModule,

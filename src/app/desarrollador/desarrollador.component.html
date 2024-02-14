@@ -91,9 +91,9 @@
                             <time class="font-caveat font-medium text-indigo-500">{{b.interval}}</time>
                         </div>
                         <div class="text-slate-500">{{b.short_description}}</div>
-                        <div class="flex justify-start gap-2 pt-[7px]">
+                        <div class="flex justify-start gap-2 pt-[7px] overflow-x-scroll">
                             <ng-container *ngFor="let i of b.languages">
-                                <img [src]="getToolById(i).icon" class="size-[22px] m-px rounded-sm" [alt]="getToolById(i).name" />
+                                <app-languageview [language]="getToolById(i)"></app-languageview>
                             </ng-container>
                         </div>
                     </div>

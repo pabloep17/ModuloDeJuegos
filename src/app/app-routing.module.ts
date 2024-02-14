@@ -11,7 +11,7 @@ import { VersionDetailComponent } from './version-detail/version-detail.componen
 import { MemoryComponent } from './memory/memory.component';
 
 const routes: Routes = [
-  { path: '', component: InicioComponent},
+  { path: '', component: MemoryComponent},
   { path: 'inicio', component: InicioComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},

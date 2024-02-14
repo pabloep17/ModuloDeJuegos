@@ -16,7 +16,7 @@ export class MemoryComponent {
   }
 
   initializeCards() {
-    const values = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const values = ['https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/java.svg', 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/python.svg', 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/react.svg', 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/js.svg', 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/html_5.svg', 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/angular.svg'];
     values.forEach(value => {
       this.cards.push({ value: value, revealed: false });
       this.cards.push({ value: value, revealed: false });
