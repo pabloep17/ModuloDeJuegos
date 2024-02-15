@@ -8,7 +8,7 @@ import { tick } from '@angular/core/testing';
 })
 export class PiedraPapelTijeraComponent {
 
-  localStorageData:string | null | any = {result: {computer: 2}}
+  localStorageData:string | null | any = {result: {computer: 5, player: 5}}
 
   computerSelection:number = 0
   computerSelectionImage:string | undefined = ""

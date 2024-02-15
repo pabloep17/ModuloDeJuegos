@@ -16,6 +16,7 @@ import { VersionDetailComponent } from './version-detail/version-detail.componen
 import { ResumeComponent } from './resume/resume.component';
 import { MemoryComponent } from './memory/memory.component';
 import { LanguageviewComponent } from './languageview/languageview.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LanguageviewComponent } from './languageview/languageview.component';
     VersionDetailComponent,
     ResumeComponent,
     MemoryComponent,
-    LanguageviewComponent
+    LanguageviewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

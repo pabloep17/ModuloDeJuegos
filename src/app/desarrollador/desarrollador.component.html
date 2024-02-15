@@ -1,26 +1,10 @@
 <div class="scroll-snap-card md:mb-[90px] mb-[110px]">
-    <button (click)="goToSection('contact')">Contact</button>
-    <button (click)="goToSection('resume')">Resume</button>
-    <button (click)="goToSection('competencias')">Competencias</button>
-    {{id}}
-    <!--
-    <section id="" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] dark:bg-[#020102] z-20">
-        <div class="flex justify-between">
-            <ng-container *ngFor="let b of tools">
-                    
-                <div>
-                    <button [attr.data-tooltip-target]="'tooltip-' + b.id" type="button" class=""><img src="../../assets/{{b.icon}}"/></button>
-    
-                    <div id="tooltip-{{b.id}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                        {{b.name}}
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                </div>
-    
-            </ng-container>
-        </div>
-    </section>
-    -->
+    <div>
+        <button (click)="goToSection('contact')">Contact</button>
+        <button (click)="goToSection('resume')">Resume</button>
+        <button (click)="goToSection('competencias')">Competencias</button>
+        <button (click)="goToSection('stack')">Stack</button>
+    </div>    
     <section id="stack" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] z-20 ">
 
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">No se que poner</h4>
@@ -31,7 +15,7 @@
         <div class="grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
             
             <ng-container *ngFor="let b of stack">
-                <div routerLink="./stack/{{b.name.replaceAll(' ', '')}}" class="relative w-full md:justify-normal group is-active">
+                <div class="relative w-full md:justify-normal group is-active">
                     <div class="bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow cursor-pointer">
                         <div class="w-full block lg:flex items-center justify-between lg:space-x-2 mb-2">
                             <div class="font-bold text-black dark:text-white">{{b.name}}</div>
@@ -79,7 +63,7 @@
         <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
             
             <ng-container *ngFor="let b of resume">
-                <div routerLink="./resume/{{b.id}}" class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white cursor-pointer bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                         <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="10">
                             <path fill-rule="nonzero" d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z" />

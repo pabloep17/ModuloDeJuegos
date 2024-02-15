@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
 })
 export class MemoryComponent {
 
+  localStorageData:string | null | any = {result: {computer: 5, player: 5}}
+
   cards: Card[] = [];
   cardsVisible: Card[] = [];
   cardsMatched: Card[] = [];
 
   constructor() {
     this.initializeCards();
+    this.localStorageData = localStorage.getItem("lastGame")
+    this.localStorageData = JSON.parse(this.localStorageData)
   }
 
   initializeCards() {
@@ -41,7 +45,7 @@ export class MemoryComponent {
     }
     if (this.cardsVisible.length == 2) {
       if (this.cardsVisible[0].value != this.cardsVisible[1].value) {
-        console.table(this.cardsVisible)
+        this.localStorageData.result.player -= 1
         this.waitOneSecond().then(() => { 
           this.cardsVisible.forEach(card => card.revealed = false);
           this.cardsVisible = [];

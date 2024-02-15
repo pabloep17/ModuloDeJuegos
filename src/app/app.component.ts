@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Modulo de juegos';
 
+  verAlerta:boolean = false
+  errorTitle:string = "Titulo del errro no se que poner"
+  errorMessaje:string = "Tampoco se que poner aqui, pero es un error que se muestra en la pantalla."
+
   ngOnInit(): void {
     const urlActual = window.location;
     const urlObj = new URL(urlActual.toString());
@@ -37,6 +41,14 @@ export class AppComponent {
 
   setVerMenuMovil(v: boolean) {
     this.verMenuMovil = v
+  }
+
+  showAlert() {
+    this.verAlerta = true
+  }
+
+  closeAlert() {
+    this.verAlerta = false
   }
 
 }

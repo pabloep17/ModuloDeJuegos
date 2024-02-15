@@ -5,7 +5,6 @@ export const getStack = async() => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('There was a problem with fetching the data:', error);
@@ -50,7 +49,6 @@ export const getTools = async() => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('There was a problem with fetching the data:', error);
@@ -65,7 +63,6 @@ export const getChangelog = async() => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('There was a problem with fetching the data:', error);
@@ -80,7 +77,6 @@ export const getChangelogById = async(id: string) => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('There was a problem with fetching the data:', error);
@@ -95,10 +91,61 @@ export const getToolById = async(id: number) => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('There was a problem with fetching the data:', error);
         return null;
     }
+}
+
+export const loginUser = async(username: string, password: string) => {
+    try {
+
+        const raw = JSON.stringify({
+            "username": username,
+            "password": password
+        });
+
+        const requestOptions = {
+            method: "POST",
+            body: raw,
+        };
+
+        const response = await fetch("https://app.pabloeguilaz.es/login.php", requestOptions)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+}
+
+export const getGitHubUser = async(code: string) => {
+
+    try {
+
+        const raw = JSON.stringify({
+            "code": code
+        });
+
+        const requestOptions = {
+            method: "POST",
+            body: raw,
+        };
+
+        const response = await fetch("https://app.pabloeguilaz.es/github.php", requestOptions)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data)
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+
 }
