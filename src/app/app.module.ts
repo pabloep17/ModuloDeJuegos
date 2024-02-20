@@ -17,6 +17,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { MemoryComponent } from './memory/memory.component';
 import { LanguageviewComponent } from './languageview/languageview.component';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginComponent } from './login/login.component';
     ResumeComponent,
     MemoryComponent,
     LanguageviewComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

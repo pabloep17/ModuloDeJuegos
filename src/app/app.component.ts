@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Modulo de juegos';
 
+  user:any = JSON.parse(localStorage.getItem('user') || '{}')
+
   verAlerta:boolean = false
   errorTitle:string = "Titulo del errro no se que poner"
   errorMessaje:string = "Tampoco se que poner aqui, pero es un error que se muestra en la pantalla."

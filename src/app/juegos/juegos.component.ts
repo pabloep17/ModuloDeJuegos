@@ -30,7 +30,7 @@ export class JuegosComponent {
     }else if (v.id === 4) {
       v.result = {
         computer: -1,
-        player: 3
+        player: 5
       }
     }
     localStorage.setItem("lastGame", JSON.stringify(v))

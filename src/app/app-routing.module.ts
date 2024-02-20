@@ -10,6 +10,7 @@ import { PiedraPapelTijeraComponent } from './piedra-papel-tijera/piedra-papel-t
 import { VersionDetailComponent } from './version-detail/version-detail.component';
 import { MemoryComponent } from './memory/memory.component';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'juegos/memory', component: MemoryComponent},
   { path: 'juegos', component: JuegosComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'user', component: UserComponent},
   { path: '**', component: PagenotfoundComponent},
 ];
 

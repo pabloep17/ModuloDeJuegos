@@ -45,7 +45,7 @@ export class MemoryComponent {
     }
     if (this.cardsVisible.length == 2) {
       if (this.cardsVisible[0].value != this.cardsVisible[1].value) {
-        this.localStorageData.result.player -= 1
+        this.localStorageData.result.player9064 -= 1
         this.waitOneSecond().then(() => { 
           this.cardsVisible.forEach(card => card.revealed = false);
           this.cardsVisible = [];

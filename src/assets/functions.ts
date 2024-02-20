@@ -1,3 +1,13 @@
+
+const production = false;
+let url = "";
+
+if (production) {
+    url = "https://app.pabloeguilaz.es";
+} else {
+    url = "http://localhost:8888";
+}
+
 export const getStack = async() => {
     try {
         const response = await fetch('https://pabloeguilazperez.github.io/PabloEguilazPerez/stack.json');
@@ -98,20 +108,26 @@ export const getToolById = async(id: number) => {
     }
 }
 
-export const loginUser = async(username: string, password: string) => {
+export const loginUser = async(email: string, password: string) => {
     try {
 
+        const headers = new Headers();
+        headers.append("clientID", "QPw67KYWNvfpvbbMyt");
+        headers.append("Content-Type", "application/json");
+
         const raw = JSON.stringify({
-            "username": username,
+            "option": "login",
+            "email": email,
             "password": password
         });
 
         const requestOptions = {
+            headers: headers,
             method: "POST",
             body: raw,
         };
 
-        const response = await fetch("https://app.pabloeguilaz.es/login.php", requestOptions)
+        const response = await fetch(url, requestOptions)
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

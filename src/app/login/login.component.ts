@@ -8,14 +8,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  // Datos del formulario
-  username: string = '';
+  // Datos del formulario 
+  email: string = '';
   password: string = '';
 
-  code:string = '';
-
-  // URL de tu API
-  url: string = 'http://app.pabloeguilaz.es/login.php';
+  code:string = "";
 
   constructor(private route: ActivatedRoute) { }
 
@@ -31,9 +28,11 @@ export class LoginComponent {
   }
 
   login(): void {
-    loginUser(this.username, this.password)
+    loginUser(this.email, this.password)
       .then((response) => {
-        
+        console.log(response);
+        //localStorage.setItem('user', JSON.stringify(response))
+        //window.location.href = '/inicio';
       })
       .catch((error) => {
         console.error(error);
