@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-memory',
@@ -13,6 +14,8 @@ export class MemoryComponent {
   cardsVisible: Card[] = [];
   cardsMatched: Card[] = [];
 
+  parent: Component | any = AppComponent
+
   constructor() {
     this.initializeCards();
     this.localStorageData = localStorage.getItem("lastGame")
@@ -26,6 +29,7 @@ export class MemoryComponent {
       this.cards.push({ value: value, revealed: false });
     });
     this.shuffleCards();
+    console.log(this.parent.errorTitle)
   }
 
   shuffleCards() {
@@ -45,7 +49,10 @@ export class MemoryComponent {
     }
     if (this.cardsVisible.length == 2) {
       if (this.cardsVisible[0].value != this.cardsVisible[1].value) {
-        this.localStorageData.result.player9064 -= 1
+        this.localStorageData.result.player -= 1
+        if (this.localStorageData.result.player == 0) {
+          this.showParentAlert()
+        }
         this.waitOneSecond().then(() => { 
           this.cardsVisible.forEach(card => card.revealed = false);
           this.cardsVisible = [];
@@ -56,6 +63,10 @@ export class MemoryComponent {
         this.cardsMatched.push(this.cardsVisible[1]);
       }
     }
+  }
+
+  showParentAlert() {
+    this.parent.showAlert()
   }
 
   waitOneSecond(): Promise<void> {

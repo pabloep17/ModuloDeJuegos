@@ -25,13 +25,13 @@
       </div>
     </div>
   </div>
-  <div class="{{verMenuMovil == true ? 'sm:hidden' : 'hidden'}}" id="headlessui-disclosure-panel-:R4ba:" data-headlessui-state="open">
+  <div class="{{verMenuMovil == true ? 'sm:hidden' : 'hidden'}}" id="" data-headlessui-state="open">
     <div class="space-y-1 pt-2 pb-3">
       <ng-container *ngFor="let n of nav">
         <a routerLink="/{{n.href}}" (click)="setViewSelect(n.name)" (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" routerLinkActive="active" class="{{viewSelect == n.name ? 'bg-slate-50 dark:bg-[#121212] dark:text-white border-slate-500 text-slate-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium'}}">{{n.name}}</a>
       </ng-container>
-      <a routerLink="/login" (click)="setViewSelect('Login')" (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" routerLinkActive="active" class=" {{user != null ? 'hidden' : ''}} border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Login</a>
-      <a class="border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" routerLink="/user">Pablo Eguilaz Perez</a>
+      <a *ngIf="user.nombre == undefined;" routerLink="/login" (click)="setViewSelect('Login')" (click)="setVerMenuMovil(verMenuMovil == true ? false : true)" routerLinkActive="active" class=" {{user != null ? 'hidden' : ''}} border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Login</a>
+      <a *ngIf="user.nombre != undefined;" class="border-slate-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" routerLink="/user">Pablo Eguilaz Perez</a>
     </div>
   </div> 
 </nav>

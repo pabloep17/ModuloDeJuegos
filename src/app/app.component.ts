@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MemoryComponent } from './memory/memory.component';
 
 @Component({
   selector: 'app-root',
@@ -46,7 +47,8 @@ export class AppComponent {
   }
 
   showAlert() {
-    this.verAlerta = true
+    window.alert("H")
+    //this.verAlerta = true
   }
 
   closeAlert() {
