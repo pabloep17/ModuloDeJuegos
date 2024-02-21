@@ -20,9 +20,12 @@ export class LoginComponent {
     this.route.queryParams.subscribe(params => {
       this.code = params['code'];
       if (this.code) {
-        /*getGitHubUser(this.code).then((response) => {
-          console.log(response);
-        })*/
+        getGitHubUser(this.code).then((response) => {
+          if (response.id) {
+            localStorage.setItem('user', JSON.stringify(response))
+            window.location.href = '/inicio';
+          }
+        })
       }
     });
   }
@@ -30,9 +33,10 @@ export class LoginComponent {
   login(): void {
     loginUser(this.email, this.password)
       .then((response) => {
-        console.log(response);
-        //localStorage.setItem('user', JSON.stringify(response))
-        //window.location.href = '/inicio';
+        if (response.token) {
+          localStorage.setItem('user', JSON.stringify(response))
+          window.location.href = '/inicio';
+        }
       })
       .catch((error) => {
         console.error(error);

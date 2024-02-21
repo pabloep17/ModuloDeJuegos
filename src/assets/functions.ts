@@ -1,3 +1,5 @@
+import { Token } from "@angular/compiler";
+import { UserComponent } from "src/app/user/user.component";
 
 const production = false;
 let url = "";
@@ -112,8 +114,7 @@ export const loginUser = async(email: string, password: string) => {
     try {
 
         const headers = new Headers();
-        headers.append("clientID", "QPw67KYWNvfpvbbMyt");
-        headers.append("Content-Type", "application/json");
+        headers.append("clientID", "76a384351ab5f38441e18e3c97033");
 
         const raw = JSON.stringify({
             "option": "login",
@@ -143,16 +144,21 @@ export const getGitHubUser = async(code: string) => {
 
     try {
 
+        const headers = new Headers();
+        headers.append("clientID", "76a384351ab5f38441e18e3c97033");
+
         const raw = JSON.stringify({
-            "code": code
+            option: "get_github_user",
+            code: code
         });
 
         const requestOptions = {
             method: "POST",
+            headers: headers,
             body: raw,
         };
 
-        const response = await fetch("https://app.pabloeguilaz.es/github.php", requestOptions)
+        const response = await fetch(url, requestOptions)
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -164,4 +170,36 @@ export const getGitHubUser = async(code: string) => {
         return null;
     }
 
+}
+
+export const updateUser = async(token:string, dato:string, valor:string|any) => {
+    try {
+
+        const headers = new Headers();
+        headers.append("token", token);
+        headers.append("clientID", "76a384351ab5f38441e18e3c97033");
+
+        const raw = JSON.stringify({
+            option: "update_user",
+            dato: dato,
+            valor: valor
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: headers,
+            body: raw,
+        };
+
+        const response = await fetch(url, requestOptions)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data)
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
 }

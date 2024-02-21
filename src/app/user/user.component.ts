@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { updateUser } from 'src/assets/functions';
 
 @Component({
   selector: 'app-user',
@@ -6,11 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+
   user:any = JSON.parse(localStorage.getItem('user') || '{}')
+
+  nombre:string = this.user.nombre
 
   cerrarSesion() {
     localStorage.removeItem('user')
     window.location.href = '/inicio';
+  }
+
+  updateData(dato:string, valor:string) {
+    window.alert(this.nombre)
+    updateUser(this.user.token, dato, valor).then(e => {
+      window.alert(JSON.stringify(e))
+    })
   }
 
 }
