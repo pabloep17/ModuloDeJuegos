@@ -18,9 +18,8 @@ export class UserComponent {
   }
 
   updateData(dato:string, valor:string) {
-    window.alert(this.nombre)
     updateUser(this.user.token, dato, valor).then(e => {
-      window.alert(JSON.stringify(e))
+
     })
   }
 

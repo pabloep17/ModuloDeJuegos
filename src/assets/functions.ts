@@ -1,11 +1,11 @@
 import { Token } from "@angular/compiler";
 import { UserComponent } from "src/app/user/user.component";
 
-const production = false;
+const production = true;
 let url = "";
 
 if (production) {
-    url = "https://app.pabloeguilaz.es";
+    url = "https://api.pabloeguilaz.es";
 } else {
     url = "http://localhost:8888";
 }
@@ -133,6 +133,7 @@ export const loginUser = async(email: string, password: string) => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log(data)
         return data;
     } catch (error) {
         console.error('There was a problem with fetching the data:', error);
