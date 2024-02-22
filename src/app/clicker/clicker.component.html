@@ -1,58 +1,28 @@
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px]">
-    <div class="p-[20px] bg-[#164D5C] min-h-screen h-full text-[#FFC745]">
-        <?php
-        
-        $curl = curl_init();
-        
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://web.pabloeguilaz.es/api.php?option=get_game_values',
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => '',
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => 'GET',
-          CURLOPT_HTTPHEADER => array(
-            'Token: '.$_SESSION['user']->token
-          ),
-        ));
-        
-        $response = curl_exec($curl);
-        
-        if ($response === false) {
-            echo 'Error al realizar la solicitud: ' . curl_error($curl);
-        } else {
-            $game = json_decode($response);
-        
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                echo 'Error al decodificar la respuesta JSON: ' . json_last_error_msg();
-            } else {
-                echo "<script>const gameId = {$game->id}</script>";
-                ?>
-                <div id="mainView" />
+    <div class="p-[20px] bg-[#164D5C] rounded-lg min-h-screen h-full text-[#FFC745]">
+                <div id="mainView">
                     <div class="flex justify-between mb-[50px] p-[10px] bg-[#FFC745] rounded-lg text-[#164D5C]">
                         <div>
                             <div class="flex justify-center items-center">
-                                <p id="clickValue" class="pr-[10px] text-xl"><?php echo $game->clickValue ?></p>
+                                <p id="clickValue" class="pr-[10px] text-xl">{{clickValue}}</p>
                                 <img src="https://web.pabloeguilaz.es/src/img/ic_gen_bucks.png" class="w-[40px] md:w-[50px]" />
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-center items-center">
-                                <p id="autoClickValue" class="pr-[10px] text-xl"><?php echo $game->clickValue ?></p>
+                                <p id="autoClickValue" class="pr-[10px] text-xl">0</p>
                                 <img src="https://web.pabloeguilaz.es/src/img/ic_gen_robot_arm.png" class="w-[40px] md:w-[50px]" />
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-center items-center">
-                                <p id="autoClickDelay" class="pr-[10px] text-xl"><?php echo $game->clickValue ?></p>
+                                <p id="autoClickDelay" class="pr-[10px] text-xl">0</p>
                                 <img src="https://web.pabloeguilaz.es/src/img/ic_gen_robot_money.png" class="w-[40px] md:w-[50px]" />
                             </div>
                         </div>
                     </div>
                     <div class="flex justify-center text-9xl pb-[50px]">
-                        <p id="monedas"><?php echo $game->contador ?></p>
+                        <p id="monedas">{{contador}}</p>
                     </div>
                     <div id="money" class="flex justify-center cursor-pointer">
                         <img src="https://web.pabloeguilaz.es/src/img/unamoneda.png" class="w-[250px] md:w-[500px]" />
@@ -78,44 +48,17 @@
                         <p id="monedasComprar"></p>
                     </div>
                     <div id="mejorasView">
-                    <?php
                     
-                        $curl2 = curl_init();
-        
-                        curl_setopt_array($curl2, array(
-                          CURLOPT_URL => 'https://web.pabloeguilaz.es/api.php?option=get_game_mejoras',
-                          CURLOPT_RETURNTRANSFER => true,
-                          CURLOPT_ENCODING => '',
-                          CURLOPT_MAXREDIRS => 10,
-                          CURLOPT_TIMEOUT => 0,
-                          CURLOPT_FOLLOWLOCATION => true,
-                          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                          CURLOPT_CUSTOMREQUEST => 'GET',
-                          CURLOPT_HTTPHEADER => array(
-                            'Token: '.$_SESSION['user']->token
-                          ),
-                        ));
-        
-                        $response = curl_exec($curl2);
-        
-                        $mejoras = json_decode($response);
-        
-                        foreach($mejoras as $mejora) {
-                    ?>
                     
                     <div class="flex justify-between pb-[20px]">
                         <img src="<?php echo $mejora->img ?>" class="md:w-[70px] md:h-[70px] w-[30px] h-[30px]" />
                         <div>
-                            <p class="flex justify-end"><?php echo $mejora->text ?></p>
-                            <button onClick="comprar('<?php echo $mejora->buttonFuncion ?>', <?php echo $mejora->value ?>)" class="flex justify-end text-[#164D5C] bg-[#FFC745] pl-[10px] pr-[10px] pt-[5px] pb-[5px] rounded-lg hover:cursor-pointer"><?php echo $mejora->value ?></button>
+                            <p class="flex justify-end">sdf</p>
+                            <button onClick="comprar('<?php echo $mejora->buttonFuncion ?>', '')" class="flex justify-end text-[#164D5C] bg-[#FFC745] pl-[10px] pr-[10px] pt-[5px] pb-[5px] rounded-lg hover:cursor-pointer"><?php echo $mejora->value ?></button>
                         </div>
                     </div>
                     
-                    <?php				
-                        }
-                        
-                        curl_close($curl2);		
-                    ?>
+
                     </div>
                     <div class="flex justify-between pb-[50px]">
                         <div>
@@ -134,15 +77,6 @@
                         <p id="errorMessage"></p>
                     </div>
                 </div>
-                <?php
-            }
-        }
-        
-        
-        curl_close($curl);
-        
-        
-        ?>
             <script src="https://web.pabloeguilaz.es/src/js/moneyClicker.js"></script>
         </div>
 </div>

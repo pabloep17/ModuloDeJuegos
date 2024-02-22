@@ -8,6 +8,10 @@ import { updateUserData } from 'src/assets/functions';
 })
 export class ClickerComponent {
 
+  clickValue:number = 0
+
+  contador:number = 0
+
   user:any = JSON.parse(localStorage.getItem('user') || '{}')
   localStorageData:string | null | any = {}
 
@@ -22,5 +26,7 @@ export class ClickerComponent {
       console.log(e)
     })
   }
+
+  aumentarContador() 
 
 }
