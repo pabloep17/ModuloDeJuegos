@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { updateUserData } from 'src/assets/functions';
 
 @Component({
   selector: 'app-memory',
@@ -16,7 +17,12 @@ export class MemoryComponent {
 
   parent: Component | any = AppComponent
 
+  user:any = JSON.parse(localStorage.getItem('user') || '{}')
+
   constructor() {
+    updateUserData(this.user.token, "jugando", {juego: "Memory", jugando: true}).then(e => {
+      console.log(e)
+    })
     this.initializeCards();
     this.localStorageData = localStorage.getItem("lastGame")
     this.localStorageData = JSON.parse(this.localStorageData)
@@ -43,13 +49,16 @@ export class MemoryComponent {
     if (this.cardsVisible.length == 2) {
       return;
     }
-    if (!card.revealed) {
+    if (!card.revealed) { 
       this.cardsVisible.push(card);
       card.revealed = true;
     }
     if (this.cardsVisible.length == 2) {
       if (this.cardsVisible[0].value != this.cardsVisible[1].value) {
         this.localStorageData.result.player -= 1
+        updateUserData(this.user.token, "memory", this.localStorageData).then(e => {
+          console.log(e)
+        })
         if (this.localStorageData.result.player == 0) {
           this.showParentAlert()
         }
@@ -75,6 +84,12 @@ export class MemoryComponent {
         resolve();
       }, 1000);
     });
+  }
+
+  ngOnDestroy() {
+    updateUserData(this.user.token, "jugando", {juego: "Memory", jugando: false}).then(e => {
+      console.log(e)
+    })
   }
 
 }

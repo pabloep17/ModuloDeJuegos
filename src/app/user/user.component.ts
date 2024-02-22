@@ -19,7 +19,11 @@ export class UserComponent {
 
   updateData(dato:string, valor:string) {
     updateUser(this.user.token, dato, valor).then(e => {
-
+      if (e.code === 200) {
+        this.user[dato] = valor
+        localStorage.setItem('user', JSON.stringify(this.user))
+        window.location.reload()
+      }
     })
   }
 

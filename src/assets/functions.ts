@@ -204,3 +204,37 @@ export const updateUser = async(token:string, dato:string, valor:string|any) => 
         return null;
     }
 }
+
+export const updateUserData = async(token:string, clave:string, valor:any) => {
+
+    try {
+
+        const headers = new Headers();
+        headers.append("token", token);
+        headers.append("clientID", "76a384351ab5f38441e18e3c97033");
+
+        const raw = JSON.stringify({
+            option: "update_user_data",
+            clave: clave,
+            valor: valor
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: headers,
+            body: raw,
+        };
+
+        const response = await fetch(url, requestOptions)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data)
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+
+}
