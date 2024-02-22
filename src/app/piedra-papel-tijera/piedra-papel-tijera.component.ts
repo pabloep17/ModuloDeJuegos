@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tick } from '@angular/core/testing';
+import { updateUserData } from 'src/assets/functions';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -8,6 +8,7 @@ import { tick } from '@angular/core/testing';
 })
 export class PiedraPapelTijeraComponent {
 
+  user:any = JSON.parse(localStorage.getItem('user') || '{}')
   localStorageData:string | null | any = {result: {computer: 5, player: 5}}
 
   computerSelection:number = 0
@@ -65,6 +66,11 @@ export class PiedraPapelTijeraComponent {
   selecciones:Map<number, string> = new Map()
 
   ngOnInit() {
+
+    updateUserData(this.user.token, "jugando", {juego: "Piedra Papel Tijera", jugando: true}).then(e => {
+      console.log(e)
+    })
+
     this.selecciones.set(1, "piedra")
     this.selecciones.set(2, "papel")
     this.selecciones.set(3, "tijera")
@@ -82,5 +88,10 @@ export class PiedraPapelTijeraComponent {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  ngOnDestroy() {
+    updateUserData(this.user.token, "jugando", {juego: "Piedra Papel Tijera", jugando: false}).then(e => {
+
+    })
+  }
 
 }

@@ -238,3 +238,65 @@ export const updateUserData = async(token:string, clave:string, valor:any) => {
     }
 
 }
+
+export const getUserSessions = async(token: string) => {
+
+    try {
+
+        const headers = new Headers();
+        headers.append("token", token);
+        headers.append("clientID", "76a384351ab5f38441e18e3c97033");
+
+        const raw = JSON.stringify({
+            option: "get_user_sessions",
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: headers,
+            body: raw,
+        };
+
+        const response = await fetch(url, requestOptions)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data)
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+
+}
+
+export const cerrarSession = async(token:string) => {
+    try {
+
+        const headers = new Headers();
+        headers.append("token", token);
+        headers.append("clientID", "76a384351ab5f38441e18e3c97033");
+
+        const raw = JSON.stringify({
+            option: "cerrar_session",
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: headers,
+            body: raw,
+        };
+
+        const response = await fetch(url, requestOptions)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data)
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+}

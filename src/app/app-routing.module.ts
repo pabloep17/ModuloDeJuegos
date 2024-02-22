@@ -11,9 +11,10 @@ import { VersionDetailComponent } from './version-detail/version-detail.componen
 import { MemoryComponent } from './memory/memory.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { ClickerComponent } from './clicker/clicker.component';
 
 const routes: Routes = [
-  { path: '', component: InicioComponent},
+  { path: '', component: ClickerComponent},
   { path: 'inicio', component: InicioComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'version/:version', component: VersionDetailComponent},
   { path: 'juegos/piedra-papel-tijera', component: PiedraPapelTijeraComponent},
   { path: 'juegos/memory', component: MemoryComponent},
+  { path: 'juegos/clicker', component: ClickerComponent},
   { path: 'juegos', component: JuegosComponent},
   { path: 'login', component: LoginComponent},
   { path: 'user', component: UserComponent},

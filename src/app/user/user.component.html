@@ -17,5 +17,16 @@
             </div>
         </div>
     </div>
+    <div class="p-4 mb-4 bg-box border border-box_border rounded-lg shadow-sm 2xl:col-span-2 dark:border-box_border_dark sm:p-6 dark:bg-body_dark">
+		<h3 class="mb-4 text-xl font-semibold dark:text-white">Sessiones</h3>
+		<div>
+            <ng-container *ngFor="let s of sessions">
+                <div class="flex justify-between">
+                    <p>ID: {{s.id}}</p>
+                    <p>Expiration Date: {{s.expiration_date}}</p>
+                </div>
+            </ng-container>
+        </div>
+    </div>
     <button (click)="cerrarSesion()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Cerrar session</button>
 </div>

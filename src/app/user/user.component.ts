@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { updateUser } from 'src/assets/functions';
+import { getUserSessions, updateUser, cerrarSession } from 'src/assets/functions';
 
 @Component({
   selector: 'app-user',
@@ -10,11 +10,25 @@ export class UserComponent {
 
   user:any = JSON.parse(localStorage.getItem('user') || '{}')
 
+  sessions:any
+
   nombre:string = this.user.nombre
 
+  ngOnInit() {
+    getUserSessions(this.user.token).then(r => {
+      this.sessions = r
+    })
+  }
+
   cerrarSesion() {
-    localStorage.removeItem('user')
-    window.location.href = '/inicio';
+    cerrarSession(this.user.token).then(e => {
+      if (e.code === 200) {
+        localStorage.removeItem('user')
+        window.location.href = '/inicio';
+      } else {
+        window.alert("No se ha podido cerrar sesion")
+      }
+    })
   }
 
   updateData(dato:string, valor:string) {
