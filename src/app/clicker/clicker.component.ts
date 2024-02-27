@@ -27,6 +27,8 @@ export class ClickerComponent {
     })
   }
 
-  aumentarContador() 
+  aumentarContador() {
+    
+  }
 
 }
