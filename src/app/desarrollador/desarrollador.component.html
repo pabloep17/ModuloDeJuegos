@@ -12,7 +12,13 @@
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">No se que poner</h4>
         <h2 class="text-5xl leading-10 font-bold w-full text-center pt-[20px] pb-[20px] text-black dark:text-white">Stack Tecnológico</h2>
 
-        <div *ngIf="stack.length == 0">Cargando</div>
+        <div *ngIf="stack.length == 0">
+            <div class="flex flex-row gap-2 w-ful justify-center my-[20px]">
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+            </div>
+        </div>
 
         <div class="grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
             
@@ -41,6 +47,14 @@
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">No se que poner</h4>
         <h2 class="text-5xl leading-10 font-bold text-black dark:text-white w-full text-center pt-[20px] pb-[20px]">Competencias</h2>
 
+        <div *ngIf="competencies.length == 0">
+            <div class="flex flex-row gap-2 w-ful justify-center my-[20px]">
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+            </div>
+        </div>
+
         <div class="grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
             
             <ng-container *ngFor="let b of competencies">
@@ -61,6 +75,14 @@
 
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">Formacion & Experiencia</h4>
         <h2 class="text-5xl leading-10 font-bold text-black dark:text-white w-full text-center pt-[20px] pb-[20px]">Mi Curriculum</h2>
+
+        <div *ngIf="resume.length == 0">
+            <div class="flex flex-row gap-2 w-ful justify-center my-[20px]">
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+            </div>
+        </div>
 
         <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
             
@@ -141,5 +163,8 @@
         </div>      
     </section>
 
+    <section>
+        
+    </section>
     
 </div>

@@ -35,7 +35,7 @@ export class InicioComponent {
     })
     */
 
-    this.countdownDate = new Date('2024-04-10T00:00:00');
+    this.countdownDate = new Date('2024-04-10T01:00:00');
     this.updateCountdown()
 
   }

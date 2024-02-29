@@ -4,7 +4,7 @@
         <div *ngIf="lastGamePlayed != undefined">
             <p class="text-black dark:text-white mb-[5px] font-semibold group">Last Game Played</p>
             <a routerLink={{lastGamePlayed.href}}>
-                <div class='bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] shadow-cl group rounded-lg md:p-[20px] p-[10px] border hover:shadow-md h-[176px] w-full ease-in-out duration-300'>
+                <div class='bg-box dark:bg-box_dark dark:text-white text-[#171717] dark:border-box_border_dark border-box_border dark:shadow-box_border_dark shadow-cl group rounded-lg md:p-[20px] p-[10px] border hover:shadow-md h-[176px] w-full ease-in-out duration-300'>
                     <div class='flex items-center '>
                         <img src={{lastGamePlayed.img}} class="w-[30px] h-[30px]" />
                         <span class='ml-[10px] w-2/3'>{{lastGamePlayed.name}}</span>

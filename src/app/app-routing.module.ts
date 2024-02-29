@@ -12,9 +12,10 @@ import { MemoryComponent } from './memory/memory.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ClickerComponent } from './clicker/clicker.component';
+import { ThreeJsGameComponent } from './three-js-game/three-js-game.component';
 
 const routes: Routes = [
-  { path: '', component: InicioComponent},
+  { path: '', component: ThreeJsGameComponent},
   { path: 'inicio', component: InicioComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},

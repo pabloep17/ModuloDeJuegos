@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ClickerComponent } from './clicker/clicker.component';
 import { CountdownComponent } from './countdown/countdown.component';
+import { ThreeJsGameComponent } from './three-js-game/three-js-game.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CountdownComponent } from './countdown/countdown.component';
     LoginComponent,
     UserComponent,
     ClickerComponent,
-    CountdownComponent
+    CountdownComponent,
+    ThreeJsGameComponent
   ],
   imports: [
     BrowserModule,
