@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { getResume, getStack, getTools, getCompetencies } from 'src/assets/functions';
+import { getResume, getStack, getTools, getCompetencies } from 'src/util/functions';
 
 @Component({
   selector: 'app-desarrollador',

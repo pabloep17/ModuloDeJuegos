@@ -1,17 +1,48 @@
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px]">
-    <div *ngIf="lastGamePlayed != undefined">
-        <p class="text-black dark:text-white mb-[5px] font-semibold group">Last Game Played</p>
-        <a routerLink={{lastGamePlayed.href}}>
-            <div class='bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] shadow-cl group rounded-lg md:p-[20px] p-[10px] border hover:shadow-md h-[176px] w-full ease-in-out duration-300'>
-                <div class='flex items-center '>
-                    <img src={{lastGamePlayed.img}} class="w-[30px] h-[30px]" />
-                    <span class='ml-[10px] w-2/3'>{{lastGamePlayed.name}}</span>
-                    <span class='ml-[10px] text-sm w-1/3 text-right'></span>
+
+    <section>
+        <div *ngIf="lastGamePlayed != undefined">
+            <p class="text-black dark:text-white mb-[5px] font-semibold group">Last Game Played</p>
+            <a routerLink={{lastGamePlayed.href}}>
+                <div class='bg-white dark:bg-black dark:text-white text-[#171717] dark:border-[#0a0a0a] shadow-cl group rounded-lg md:p-[20px] p-[10px] border hover:shadow-md h-[176px] w-full ease-in-out duration-300'>
+                    <div class='flex items-center '>
+                        <img src={{lastGamePlayed.img}} class="w-[30px] h-[30px]" />
+                        <span class='ml-[10px] w-2/3'>{{lastGamePlayed.name}}</span>
+                        <span class='ml-[10px] text-sm w-1/3 text-right'></span>
+                    </div>
+                    <p class="text-sm mt-[10px] ml-[20px]">{{lastGamePlayed.descripcion}}</p>
+                    <!--<p class="text-sm mt-[10px] ml-[20px]"><span>Jugador: {{lastGamePlayed.result.player}}</span> <span class="pl-[5px]">Ordenador: {{lastGamePlayed.result.computer}}</span></p>-->
+                    <p class="text-sm mt-[25px] ml-[20px] group-hover:text-xl ease-in-out duration-300">Seguir Jugando</p>
                 </div>
-                <p class="text-sm mt-[10px] ml-[20px]">{{lastGamePlayed.descripcion}}</p>
-                <!--<p class="text-sm mt-[10px] ml-[20px]"><span>Jugador: {{lastGamePlayed.result.player}}</span> <span class="pl-[5px]">Ordenador: {{lastGamePlayed.result.computer}}</span></p>-->
-                <p class="text-sm mt-[25px] ml-[20px] group-hover:text-xl ease-in-out duration-300">Seguir Jugando</p>
-            </div>
-        </a>
-    </div>
+            </a>
+        </div>
+    </section>
+    
+    <section class="my-0 flex flex-col place-items-center gap-y-10 md:my-28 dark:text-white" aria-label="cuenta atrás">
+        <img src="https://angular.io/assets/images/logos/angular/shield-large.svg" />
+        <p class="max-w-[250px] text-balance text-center text-lg font-medium uppercase text-primary opacity-80 sm:max-w-full">Siguiente Juego en: </p>
+    
+        <div
+            class="flex flex-row gap-x-1 font-semibold uppercase text-primary "
+            role="timer"
+            data-date={EVENT_TIMESTAMP}
+        >
+
+            <app-countdown dateType="dias" [time]="days"></app-countdown>
+    
+            <span aria-hidden="true" class="mt-1 text-xl">:</span>
+    
+            <app-countdown dateType="horas" [time]="hours"></app-countdown>
+    
+            <span aria-hidden="true" class="mt-1 text-xl">:</span>
+    
+            <app-countdown dateType="minutos" [time]="minutes"></app-countdown>
+            
+            <span aria-hidden="true" class="mt-1 text-xl">:</span>
+    
+            <app-countdown dateType="segundos" [time]="seconds"></app-countdown>
+           
+        </div>
+    </section>
+
 </div>

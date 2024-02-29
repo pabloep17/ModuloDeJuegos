@@ -19,6 +19,7 @@ import { LanguageviewComponent } from './languageview/languageview.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ClickerComponent } from './clicker/clicker.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ClickerComponent } from './clicker/clicker.component';
     LanguageviewComponent,
     LoginComponent,
     UserComponent,
-    ClickerComponent
+    ClickerComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,

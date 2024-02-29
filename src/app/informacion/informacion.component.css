@@ -1,0 +1,11 @@
+.menu {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        grid-gap: 12px;
+    }
+}

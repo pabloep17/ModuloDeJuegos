@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getGitHubUser, loginUser } from 'src/assets/functions';
+import { getGitHubUser, loginUser } from 'src/util/functions';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

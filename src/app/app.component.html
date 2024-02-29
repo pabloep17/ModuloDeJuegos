@@ -68,6 +68,70 @@
   <router-outlet></router-outlet>
 </main>
 
+<div class="relative z-50 {{verDialogue ? '' : 'hidden'}}" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity {{verDialogue ? 'ease-out duration-300 opacity-100' : 'ease-in duration-200 opacity-0'}}"></div>
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div class="z-50 p-4">
+          <div class="relative p-4">
+            <div class="pointer-events-auto relative z-10 md:w-[600px] w-full rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 shadow-xl shadow-black/5 ring-1 ring-slate-700/10"><div>
+              <div class="flex items-center px-3.5 py-2.5 text-slate-400">
+                <svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="text" [(ngModel)]="searchBar" name="searchBar" placeholder="Seach">
+              </div>
+              <div class="border-t border-slate-400/20 px-3.5 py-3">
+                <div class="mb-1.5 text-[0.6875rem] font-semibold text-slate-500">Recent searches</div>
+                <div class="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white group cursor-pointer">
+                  <svg class="mr-2.5 h-5 w-5 flex-none group-hover:stroke-white stroke-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
+                  <span>Tailwind Labs / Website Redesign</span>
+                </div>
+                <div class="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white group cursor-pointer">
+                  <svg class="mr-2.5 h-5 w-5 flex-none group-hover:stroke-white stroke-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
+                  <span>Laravel LLC / Conference Branding</span>
+                </div>
+              </div>
+            
+              <div class="border-t border-slate-400/20 px-3.5 py-3">
+                <div class="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white group cursor-pointer">
+                  <svg class="mr-2.5 h-5 w-5 flex-none group-hover:stroke-white stroke-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  <span>Add new file...</span>
+                </div>
+                <div class="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white group cursor-pointer">
+                  <svg class="mr-2.5 h-5 w-5 flex-none group-hover:stroke-white stroke-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                  </svg>
+                  <span>Add new folder...</span>
+                </div>
+                <div class="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white group cursor-pointer">
+                  <svg class="mr-2.5 h-5 w-5 flex-none group-hover:stroke-white stroke-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
+                  </svg>
+                  <span>Add hashtag...</span>
+                </div>
+                <div class="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white group cursor-pointer">
+                  <svg class="mr-2.5 h-5 w-5 flex-none group-hover:stroke-white stroke-slate-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                  </svg>
+                  <span>Add label...</span>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-nav border-t border-box_border dark:border-box_border_dark shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-nav_dark">
   <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://pabloeguilaz.es" class="hover:underline">Pablo Eguilaz Perez</a>. All Rights Reserved.
   </span>

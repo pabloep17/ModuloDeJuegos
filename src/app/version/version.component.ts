@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { getChangelog } from '../../assets/functions';
+import { getChangelog } from '../../util/functions';
 
 @Component({
   selector: 'app-version',

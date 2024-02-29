@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { updateUserData } from 'src/assets/functions';
+import { updateUserData } from 'src/util/functions';
+import { CommandService } from 'src/util/commandService';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -17,6 +18,16 @@ export class PiedraPapelTijeraComponent {
   playerSelectionImage:string | undefined = ""
 
   msg:string = "Ya puedes jugar"
+
+  constructor(private commandService: CommandService) {
+    this.localStorageData = localStorage.getItem("lastGame")
+    this.localStorageData = JSON.parse(this.localStorageData)
+    this.localStorageData.result = {
+      computer: 5,
+      player: 5
+    }
+    localStorage.setItem("lastGame", JSON.stringify(this.localStorageData))
+  }
 
   setPlayerSelection(v:number, e:string) {
 
@@ -47,14 +58,16 @@ export class PiedraPapelTijeraComponent {
       this.localStorageData.result.player -= 1
     }
 
-    if (this.localStorageData.result.computer < 1) {
-      if (window.confirm("Has ganado")) {
+    updateUserData(this.user.token, "piedra-papel-tijera", this.localStorageData).then(e => {
+      console.log(e.code)
+    })
 
-      }else {
-        
-      }
+    if (this.localStorageData.result.computer < 1) {
+      this.commandService.sendCommand('{"accion": "mostrar_alerta", "titulo": "Has Ganadoo", "mensaje": "Al Ordenador se le han acabado los intentos"}');
+      this.localStorageData.result.computer = 5
     }else if (this.localStorageData.result.player < 1) {
-      window.alert("El Ordenador Gana")
+      this.commandService.sendCommand('{"accion": "mostrar_alerta", "titulo": "Has Perdido", "mensaje": "Se ten han acabado los intentos"}');
+      this.localStorageData.result.computer = 5
     }
 
     localStorage.setItem("lastGame", JSON.stringify(this.localStorageData))
@@ -74,9 +87,6 @@ export class PiedraPapelTijeraComponent {
     this.selecciones.set(1, "piedra")
     this.selecciones.set(2, "papel")
     this.selecciones.set(3, "tijera")
-
-    this.localStorageData = localStorage.getItem("lastGame")
-    this.localStorageData = JSON.parse(this.localStorageData)
 
   }
 

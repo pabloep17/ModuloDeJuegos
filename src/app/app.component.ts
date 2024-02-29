@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, HostListener } from '@angular/core';
 import { MemoryComponent } from './memory/memory.component';
+import { CommandService } from 'src/util/commandService';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,16 @@ export class AppComponent {
   user:any = JSON.parse(localStorage.getItem('user') || '{}')
 
   verAlerta:boolean = false
-  errorTitle:string = "Titulo del errro no se que poner"
-  errorMessaje:string = "Tampoco se que poner aqui, pero es un error que se muestra en la pantalla."
+  errorTitle:string = ""
+  errorMessaje:string = ""
+
+
+  verDialogue:boolean = false
+  searchBar:string = ""
+
+
+  constructor(private commandService: CommandService) {}
+
 
   ngOnInit(): void {
     const urlActual = window.location;
@@ -24,6 +33,23 @@ export class AppComponent {
     const palabraInicio = partesRuta[partesRuta.length - 1];
     this.title = palabraInicio
     this.viewSelect = palabraInicio.charAt(0).toUpperCase() + palabraInicio.slice(1);
+
+    this.commandService.getCommandObservable().subscribe(command => {
+      const commandObj = JSON.parse(command);
+      
+      if (commandObj.accion === 'mostrar_alerta') {
+        this.showAlert(commandObj.titulo, commandObj.mensaje);
+      }
+
+    });
+
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.metaKey && event.key === 'b') {
+      this.verDialogue = !this.verDialogue
+    }
   }
 
   verMenuMovil:boolean = false
@@ -46,9 +72,10 @@ export class AppComponent {
     this.verMenuMovil = v
   }
 
-  showAlert() {
-    window.alert("H")
-    //this.verAlerta = true
+  showAlert(alertTitle: string, alertMessage: string) {
+    this.errorTitle = alertTitle
+    this.errorMessaje = alertMessage
+    this.verAlerta = true
   }
 
   closeAlert() {

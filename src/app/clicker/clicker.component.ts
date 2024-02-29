@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { updateUserData } from 'src/assets/functions';
+import { updateUserData } from 'src/util/functions';
 
 @Component({
   selector: 'app-clicker',

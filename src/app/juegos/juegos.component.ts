@@ -22,17 +22,6 @@ export class JuegosComponent {
   buscador:string = ""
 
   gameClick(v:any) {
-    if (v.id === 1) {
-      v.result = {
-        computer: 5,
-        player: 5
-      }
-    }else if (v.id === 4) {
-      v.result = {
-        computer: -1,
-        player: 5
-      }
-    }
     localStorage.setItem("lastGame", JSON.stringify(v))
   }
   

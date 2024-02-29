@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getUserSessions, updateUser, cerrarSession } from 'src/assets/functions';
+import { getUserSessions, updateUser, cerrarSession } from 'src/util/functions';
 
 @Component({
   selector: 'app-user',

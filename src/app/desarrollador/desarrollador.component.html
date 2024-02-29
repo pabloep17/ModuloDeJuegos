@@ -1,10 +1,12 @@
 <div class="scroll-snap-card md:mb-[90px] mb-[110px]">
+    <!--
     <div>
         <button (click)="goToSection('contact')">Contact</button>
         <button (click)="goToSection('resume')">Resume</button>
         <button (click)="goToSection('competencias')">Competencias</button>
         <button (click)="goToSection('stack')">Stack</button>
     </div>    
+    -->
     <section id="stack" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] z-20 ">
 
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">No se que poner</h4>
@@ -16,14 +18,14 @@
             
             <ng-container *ngFor="let b of stack">
                 <div class="relative w-full md:justify-normal group is-active">
-                    <div class="bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow cursor-pointer">
+                    <div class="bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow dark:shadow-box_border_dark cursor-pointer">
                         <div class="w-full block lg:flex items-center justify-between lg:space-x-2 mb-2">
                             <div class="font-bold text-black dark:text-white">{{b.name}}</div>
                         </div>
                         <ng-container *ngFor="let l of b.languages">
                             <div class="flex gap-2 mt-[5px]">
                                 <img [src]="getToolById(l).icon" class="size-[20px]"/>
-                                <p class="text-sm">{{getToolById(l).name}}</p>
+                                <span class="text-sm">{{getToolById(l).name}}</span>
                             </div>
                         </ng-container>
                     </div>
@@ -33,8 +35,8 @@
         </div>
 
     </section>
-    <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px] dark:bg-[#020102]"/>
-    <section id="competencias" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] dark:bg-[#020102] z-20">
+    <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px]"/>
+    <section id="competencias" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] z-20">
 
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">No se que poner</h4>
         <h2 class="text-5xl leading-10 font-bold text-black dark:text-white w-full text-center pt-[20px] pb-[20px]">Competencias</h2>
@@ -42,8 +44,8 @@
         <div class="grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
             
             <ng-container *ngFor="let b of competencies">
-                <div routerLink="./competencies/{{b.id}}" class="relative w-full md:justify-normal group is-active">
-                    <div class="bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow cursor-pointer">
+                <div class="relative w-full md:justify-normal group is-active">
+                    <div class="bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white dark:shadow-box_border_dark shadow cursor-pointer">
                         <div class="w-full block lg:flex items-center justify-between lg:space-x-2 mb-1">
                             <div class="font-bold">{{b.name}}</div>
                         </div>
@@ -54,8 +56,8 @@
         </div>
 
     </section>
-    <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px] dark:bg-[#020102]"/>
-    <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] dark:bg-[#020102] z-20">
+    <hr class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[60px]"/>
+    <section id="resume" class="slide mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[40px] mb-[20px] z-20">
 
         <h4 class="text-[#4a6cf7] font-medium text-lg leading-7 w-full text-center">Formacion & Experiencia</h4>
         <h2 class="text-5xl leading-10 font-bold text-black dark:text-white w-full text-center pt-[20px] pb-[20px]">Mi Curriculum</h2>
@@ -69,7 +71,7 @@
                             <path fill-rule="nonzero" d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z" />
                         </svg>
                     </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow cursor-pointer">
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white dark:shadow-box_border_dark shadow cursor-pointer">
                         <div class="block lg:flex items-center justify-between lg:space-x-2 mb-1">
                             <div class="font-bold">{{b.title}}</div>
                             <time class="font-caveat font-medium text-indigo-500">{{b.interval}}</time>

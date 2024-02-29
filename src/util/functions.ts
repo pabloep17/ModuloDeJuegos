@@ -1,4 +1,5 @@
 import { Token } from "@angular/compiler";
+import { Carousel } from "flowbite";
 import { UserComponent } from "src/app/user/user.component";
 
 const production = true;
@@ -299,4 +300,20 @@ export const cerrarSession = async(token:string) => {
         console.error('There was a problem with fetching the data:', error);
         return null;
     }
+}
+
+export const getInicio = async() => {
+
+    try {
+        const response = await fetch(`https://pabloeguilazperez.github.io/PabloEguilazPerez/inicio.json`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+        return null;
+    }
+
 }

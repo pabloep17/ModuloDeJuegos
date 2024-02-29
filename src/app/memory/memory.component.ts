@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { updateUserData } from 'src/assets/functions';
+import { updateUserData } from 'src/util/functions';
+
+import { CommandService } from 'src/util/commandService';
 
 @Component({
   selector: 'app-memory',
@@ -19,13 +21,20 @@ export class MemoryComponent {
 
   user:any = JSON.parse(localStorage.getItem('user') || '{}')
 
-  constructor() {
+  constructor(private commandService: CommandService) {
     updateUserData(this.user.token, "jugando", {juego: "Memory", jugando: true}).then(e => {
       console.log(e)
     })
     this.initializeCards();
     this.localStorageData = localStorage.getItem("lastGame")
     this.localStorageData = JSON.parse(this.localStorageData)
+    this.localStorageData.result = {
+      player: 5
+    }
+    localStorage.setItem("lastGame", JSON.stringify(this.localStorageData))
+    updateUserData(this.user.token, "memory", this.localStorageData).then(e => {
+      console.log(e.code)
+    })
   }
 
   initializeCards() {
@@ -60,7 +69,7 @@ export class MemoryComponent {
           console.log(e)
         })
         if (this.localStorageData.result.player == 0) {
-          this.showParentAlert()
+          this.commandService.sendCommand('{"accion": "mostrar_alerta", "titulo": "Has Perdido", "mensaje": "Se ten han acabado los intentos"}');
         }
         this.waitOneSecond().then(() => { 
           this.cardsVisible.forEach(card => card.revealed = false);
@@ -72,10 +81,6 @@ export class MemoryComponent {
         this.cardsMatched.push(this.cardsVisible[1]);
       }
     }
-  }
-
-  showParentAlert() {
-    this.parent.showAlert()
   }
 
   waitOneSecond(): Promise<void> {
