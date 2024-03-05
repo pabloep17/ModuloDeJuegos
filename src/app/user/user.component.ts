@@ -22,13 +22,9 @@ export class UserComponent {
 
   cerrarSesion() {
     cerrarSession(this.user.token).then(e => {
-      if (e.code === 200) {
-        localStorage.removeItem('user')
-        window.location.href = '/inicio';
-      } else {
-        window.alert("No se ha podido cerrar sesion")
-      }
     })
+    localStorage.removeItem('user')
+    window.location.href = '/inicio';
   }
 
   updateData(dato:string, valor:string) {

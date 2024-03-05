@@ -58,27 +58,35 @@ export class DesarrolladorComponent {
   }
 
   send() {
-    var formdata = new FormData();
-    formdata.append("firstname", `${this.firstname}`);
-    formdata.append("lastname", this.lastname);
-    formdata.append("email", this.email);
-    formdata.append("body", this.body);
 
-    var requestOptions = {
-      method: 'POST',
-      body: formdata
-    };
+    try {
 
-    fetch("https://api.pabloeguilaz.es/", requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+      const headers = new Headers();
+      headers.append("clientID", "76a384351ab5f38441e18e3c97033");
 
-    this.firstname = ""
-    this.lastname = ""
-    this.email = ""
-    this.body = ""
-    
+      const raw = JSON.stringify({
+          option: "send_formulario_contacto",
+          firstname: `${this.firstname}`,
+          lastname: this.lastname,
+          email: this.email,
+          body: this.body,
+      });
+
+      const requestOptions = {
+          method: "POST",
+          headers: headers,
+          body: raw,
+      };
+
+      const response = fetch("https://api.pabloeguilaz.es", requestOptions)
+
+      this.firstname = ""
+      this.lastname = ""
+      this.email = ""
+      this.body = ""
+
+    } catch (error) {
+        console.error('There was a problem with fetching the data:', error);
+    }
   }
-
 }
