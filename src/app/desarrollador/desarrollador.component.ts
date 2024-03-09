@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { getResume, getStack, getTools, getCompetencies } from 'src/util/functions';
+import { CommandService } from 'src/util/commandService';
 
 @Component({
   selector: 'app-desarrollador',
@@ -10,7 +11,7 @@ import { getResume, getStack, getTools, getCompetencies } from 'src/util/functio
 export class DesarrolladorComponent {
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private commandService: CommandService) { }
 
   firstname:string = ""
   lastname:string = ""
@@ -79,6 +80,8 @@ export class DesarrolladorComponent {
       };
 
       const response = fetch("https://api.pabloeguilaz.es", requestOptions)
+
+      this.commandService.sendCommand('{"accion": "mostrar_sucess_message", "titulo": "Mensaje Enviado", "mensaje": "El mesaje ha sido enviado correctamente. Gracias por contactar conmigo."}');
 
       this.firstname = ""
       this.lastname = ""
