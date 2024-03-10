@@ -1,0 +1,7 @@
+{
+  "name": "modulodejuegos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

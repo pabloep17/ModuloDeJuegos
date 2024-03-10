@@ -18,8 +18,8 @@ import { MemoryComponent } from './memory/memory.component';
 import { LanguageviewComponent } from './languageview/languageview.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-import { ClickerComponent } from './clicker/clicker.component';
 import { CountdownComponent } from './countdown/countdown.component';
+import { SnakeComponent } from './snake/snake.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +38,8 @@ import { CountdownComponent } from './countdown/countdown.component';
     LanguageviewComponent,
     LoginComponent,
     UserComponent,
-    ClickerComponent,
     CountdownComponent,
+    SnakeComponent,
   ],
   imports: [
     BrowserModule,
