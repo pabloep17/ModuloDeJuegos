@@ -51,6 +51,13 @@ export class SnakeComponent {
         this.ganador = '';
         break;
       }
+      //Comporbar empate
+      if (!this.tablero.includes('-') && !this.ganador) {
+        this.commandService.sendCommand(`{"accion": "mostrar_alerta", "titulo": "Empate", "mensaje": "Nadie ha ganado la partida"}`);
+        //Reinicio el juego
+        this.tablero = ['-', '-', '-', '-', '-', '-', '-', '-', '-'];
+        this.ganador = '';
+      }
     }
   }
 }
