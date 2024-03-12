@@ -48,6 +48,7 @@ export class SnakeComponent {
         this.commandService.sendCommand(`{"accion": "mostrar_alerta", "titulo": "Has Ganadoo", "mensaje": "${this.ganador} ha ganado la partida"}`);
         //Reinicio el juego
         this.tablero = ['-', '-', '-', '-', '-', '-', '-', '-', '-'];
+        this.ganador = '';
         break;
       }
     }

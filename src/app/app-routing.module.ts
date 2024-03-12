@@ -14,7 +14,7 @@ import { UserComponent } from './user/user.component';
 import { SnakeComponent } from './snake/snake.component';
 
 const routes: Routes = [
-  { path: '', component: SnakeComponent},
+  { path: '', component: InicioComponent},
   { path: 'inicio', component: InicioComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'desarrollador', component: DesarrolladorComponent},
