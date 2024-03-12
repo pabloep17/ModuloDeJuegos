@@ -62,7 +62,7 @@
     align-items: center  ;
     background-color: #d8ebe4  ;
     cursor: pointer  ;
-    z-index: 99  ;
+    z-index: 10  ;
   }
   .container2 .game-board {
     background-color: #d8ebe4  ;
@@ -281,7 +281,7 @@
     align-items: center  ;
     background-color: #d8ebe4  ;
     cursor: pointer  ;
-    z-index: 99  ;
+    z-index: 10  ;
   }
   .container2 .game-board {
     background-color: #d8ebe4  ;

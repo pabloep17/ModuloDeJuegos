@@ -1,7 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Food } from './ts/food';
-import { Snake } from './ts/snake';
-import { outsideGrid } from './ts/gameboard-grid.util';
+import { CommandService } from 'src/util/commandService';
 
 @Component({
   selector: 'app-snake',
@@ -9,79 +7,47 @@ import { outsideGrid } from './ts/gameboard-grid.util';
   styleUrls: ['./snake.component.css']
 })
 export class SnakeComponent {
+  tablero: string[] = ['-', '-', '-', '-', '-', '-', '-', '-', '-'];
+  jugadorActual: string = 'X';
+  ganador: string = '';
 
-  gameBoard: any;
-  snake = new Snake();
-  food = new Food(this.snake);
-
-
-  lastRenderTime = 0
-  gameOver = false
-
-  ngAfterViewInit() {
-    this.gameBoard = document.querySelector('.game-board');
-    window.requestAnimationFrame(this.start.bind(this));
-  }
+  constructor(private commandService: CommandService) { }
 
   ngOnInit(): void {
-    this.snake.listenToInputs();
-  }
-  dpadMovement(direction: string) {
-    this.snake.input.setDirection(direction);
+
   }
 
-
-  start(currentTime: any) {
-    if (this.gameOver) {
-      return console.log('Game Over');
+  colocarFicha(index: number) {
+    if (this.tablero[index] === '-' && !this.ganador) {
+      this.tablero[index] = this.jugadorActual;
+      this.verificarGanador();
+      this.jugadorActual = this.jugadorActual === 'X' ? 'O' : 'X';
     }
-
-    window.requestAnimationFrame(this.start.bind(this));
-    const secondsSinceLastRender = (currentTime - this.lastRenderTime) / 1000;
-    if (secondsSinceLastRender < 1 / this.snakeSpeed) {
-      return;
-    }
-    this.lastRenderTime = currentTime;
-
-    this.update();
-    this.draw();
   }
 
-  update() {
-    this.snake.update();
-    this.food.update();
-    this.checkDeath();
-  }
+  verificarGanador() {
+    const combinacionesGanadoras = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
 
-  draw() {
-    this.gameBoard.innerHTML = '';
-    this.snake.draw(this.gameBoard);
-    this.food.draw(this.gameBoard);
-  }
-
-  checkDeath() {
-    this.gameOver = outsideGrid(this.snake.getSnakeHead()) || this.snake.snakeIntersection();
-    if (!this.gameOver) {
-      return;
+    for (const combinacion of combinacionesGanadoras) {
+      const [a, b, c] = combinacion;
+      if (
+        this.tablero[a] !== '-' &&
+        this.tablero[a] === this.tablero[b] &&
+        this.tablero[a] === this.tablero[c]
+      ) {
+        this.ganador = this.tablero[a];
+        this.commandService.sendCommand(`{"accion": "mostrar_alerta", "titulo": "Has Ganadoo", "mensaje": "${this.ganador} ha ganado la partida"}`);
+        break;
+      }
     }
-    this.gameBoard.classList.add('blur');
   }
-
-
-  get snakeSpeed() {
-    const score = this.food.currentScore;
-    if (score < 10) {
-      return 4;
-    }
-    if (score > 10 && score < 15) {
-      return 5;
-    }
-    if (score > 15 && score < 20) {
-      return 6;
-    }
-    return 7;
-  }
-
- 
-
 }
