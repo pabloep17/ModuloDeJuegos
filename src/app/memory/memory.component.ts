@@ -55,9 +55,6 @@ export class MemoryComponent {
   }
 
   revealCard(card: Card) {
-    if (this.cardsVisible.length == 2) {
-      return;
-    }
     if (!card.revealed) { 
       this.cardsVisible.push(card);
       card.revealed = true;
@@ -70,6 +67,11 @@ export class MemoryComponent {
         })
         if (this.localStorageData.result.player == 0) {
           this.commandService.sendCommand('{"accion": "mostrar_alerta", "titulo": "Has Perdido", "mensaje": "Se ten han acabado los intentos"}');
+          //Reinicio el juego
+          this.cardsVisible = [];
+          this.cardsMatched = [];
+          this.cards = [];
+          this.initializeCards();
         }
         this.waitOneSecond().then(() => { 
           this.cardsVisible.forEach(card => card.revealed = false);

@@ -23,7 +23,7 @@ export class LoginComponent {
         getGitHubUser(this.code).then((response) => {
           if (response.id) {
             localStorage.setItem('user', JSON.stringify(response))
-            window.location.href = '/inicio';
+            window.location.href = '/';
           }
         })
       }
@@ -35,7 +35,7 @@ export class LoginComponent {
       .then((response) => {
         if (response.token) {
           localStorage.setItem('user', JSON.stringify(response))
-          window.location.href = '/inicio';
+          window.location.href = '/';
         }
       })
       .catch((error) => {

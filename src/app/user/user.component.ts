@@ -24,7 +24,7 @@ export class UserComponent {
     cerrarSession(this.user.token).then(e => {
     })
     localStorage.removeItem('user')
-    window.location.href = '/inicio';
+    window.location.href = '/';
   }
 
   updateData(dato:string, valor:string) {

@@ -1,15 +1,15 @@
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px]">
   <div class="flex justify-center bg-box dark:bg-box_dark hover:shadow-md p-4 rounded-lg border border-box_border dark:border-box_border_dark text-black dark:text-white shadow dark:shadow-box_border_dark cursor-pointer">
     <div class="grid grid-cols-3 gap-4 w-full justify-items-center">
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(0)">{{ tablero[0] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(1)">{{ tablero[1] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(2)">{{ tablero[2] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(3)">{{ tablero[3] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(4)">{{ tablero[4] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(5)">{{ tablero[5] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(6)">{{ tablero[6] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(7)">{{ tablero[7] }}</button>
-      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark" (click)="colocarFicha(8)">{{ tablero[8] }}</button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(0)"><img *ngIf="tablero[0] != '-'" [src]="tablero[0]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(1)"><img *ngIf="tablero[1] != '-'" [src]="tablero[1]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(2)"><img *ngIf="tablero[2] != '-'" [src]="tablero[2]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(3)"><img *ngIf="tablero[3] != '-'" [src]="tablero[3]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(4)"><img *ngIf="tablero[4] != '-'" [src]="tablero[4]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(5)"><img *ngIf="tablero[5] != '-'" [src]="tablero[5]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(6)"><img *ngIf="tablero[6] != '-'" [src]="tablero[6]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(7)"><img *ngIf="tablero[7] != '-'" [src]="tablero[7]"/></button>
+      <button class="w-24 h-24 border border-box_border shadow-sm rounded-lg bg-nav hover:bg-box dark:bg-box_dark dark:hover:bg-box_dark flex items-center justify-around" (click)="colocarFicha(8)"><img *ngIf="tablero[8] != '-'" [src]="tablero[8]"/></button>
     </div>
   </div>  
 </div>

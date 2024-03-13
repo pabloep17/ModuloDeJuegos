@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 })
 
 export class CommandService {
+  
   private commandSubject = new Subject<string>();
 
   sendCommand(command: string) {

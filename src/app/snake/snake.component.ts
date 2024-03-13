@@ -8,7 +8,7 @@ import { CommandService } from 'src/util/commandService';
 })
 export class SnakeComponent {
   tablero: string[] = ['-', '-', '-', '-', '-', '-', '-', '-', '-'];
-  jugadorActual: string = 'X';
+  jugadorActual: string = 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/java.svg';
   ganador: string = '';
 
   constructor(private commandService: CommandService) { }
@@ -18,10 +18,12 @@ export class SnakeComponent {
   }
 
   colocarFicha(index: number) {
+    window.navigator.vibrate(200);
     if (this.tablero[index] === '-' && !this.ganador) {
       this.tablero[index] = this.jugadorActual;
+      console.log(this.tablero[index])
       this.verificarGanador();
-      this.jugadorActual = this.jugadorActual === 'X' ? 'O' : 'X';
+      this.jugadorActual = this.jugadorActual === 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/java.svg' ? 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/python.svg' : 'https://pabloeguilazperez.github.io/PabloEguilazPerez/icons/java.svg';
     }
   }
 
@@ -45,7 +47,7 @@ export class SnakeComponent {
         this.tablero[a] === this.tablero[c]
       ) {
         this.ganador = this.tablero[a];
-        this.commandService.sendCommand(`{"accion": "mostrar_alerta", "titulo": "Has Ganadoo", "mensaje": "${this.ganador} ha ganado la partida"}`);
+        this.commandService.sendCommand(`{"accion": "mostrar_alerta", "titulo": "Has Ganadoo", "mensaje": "<img src='${this.ganador}'/> ha ganado la partida"}`);
         //Reinicio el juego
         this.tablero = ['-', '-', '-', '-', '-', '-', '-', '-', '-'];
         this.ganador = '';
